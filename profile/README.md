@@ -72,6 +72,9 @@ Players never pay. Our money rules are simple:
 
 | Repository | Description |
 | --- | --- |
+| [engine](https://github.com/openpickleball/engine) | The reference rating engine |
+| [backend](https://github.com/openpickleball/backend) | Backend services and APIs |
+| [frontend](https://github.com/openpickleball/frontend) | The public app |
 | [.github](https://github.com/openpickleball/.github) | This organization profile and shared community files |
 
 More repositories will be listed here as they are published. You can also browse [everything in the organization](https://github.com/openpickleball?tab=repositories).

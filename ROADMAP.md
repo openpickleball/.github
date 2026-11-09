@@ -6,7 +6,6 @@ This page shows OPEN's priorities across the whole project, in rough order. It h
 
 - Publish the first versioned rating spec and reference engine
 - Test the engine on real match results in shadow mode, so that no one relies on its ratings yet
-- Publish the community documents that outside contributors need
 
 ## Required before ratings go live
 
