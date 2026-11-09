@@ -94,4 +94,5 @@ To get started, [open an issue](https://github.com/openpickleball/.github/issues
 
 - **Website:** [www.openpb.org](https://www.openpb.org)
 - **GitHub:** [github.com/openpickleball](https://github.com/openpickleball)
-- **Feedback and questions:** [GitHub issues](https://github.com/openpickleball/.github/issues)
+- **Questions and ideas:** [GitHub Discussions](https://github.com/openpickleball/.github/discussions)
+- **Feedback and bug reports:** [GitHub issues](https://github.com/openpickleball/.github/issues)

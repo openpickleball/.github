@@ -1,0 +1,49 @@
+name: Feature or project idea
+description: Propose a new feature or a change to OPEN's priorities.
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        To propose a change to how ratings are calculated, use the rating spec change form instead.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Say who has the problem and how it affects them.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What do you propose?
+    validations:
+      required: true
+  - type: dropdown
+    id: goal
+    attributes:
+      label: How does this help the standard?
+      description: If it does none of these, it probably belongs in a partner's product.
+      options:
+        - Makes it more accurate
+        - Makes it more trusted
+        - Makes it easier to adopt
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered
+    validations:
+      required: false
+  - type: checkboxes
+    id: agreements
+    attributes:
+      label: Before you submit
+      options:
+        - label: This idea fits the [mission charter](https://github.com/openpickleball/.github/blob/main/CHARTER.md), which rules out subscriptions, paid tiers, advertisements, and premium features.
+          required: true
+        - label: This request does not contain real player names, contact details, or match histories.
+          required: true
+        - label: I agree to follow the [Code of Conduct](https://github.com/openpickleball/.github/blob/main/CODE_OF_CONDUCT.md).
+          required: true

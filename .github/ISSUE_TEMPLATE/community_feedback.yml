@@ -1,0 +1,32 @@
+name: Player, club, or platform feedback
+description: Tell us what you need from a rating. No coding knowledge needed.
+labels: ["feedback", "triage"]
+body:
+  - type: dropdown
+    id: role
+    attributes:
+      label: How do you take part in pickleball?
+      options:
+        - Player
+        - Club or event organizer
+        - App or league platform builder
+        - Statistician or rating enthusiast
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What would you like us to know?
+      description: For example, what you need from a rating, what would make one easier to trust, or how you run events and record results.
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreements
+    attributes:
+      label: Before you submit
+      options:
+        - label: This feedback does not contain other people's names, contact details, or match histories.
+          required: true
+        - label: I agree to follow the [Code of Conduct](https://github.com/openpickleball/.github/blob/main/CODE_OF_CONDUCT.md).
+          required: true

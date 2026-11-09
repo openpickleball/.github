@@ -1,0 +1,61 @@
+name: Rating spec change
+description: Propose or challenge a change to how OPEN ratings are calculated.
+labels: ["rating-spec", "needs-evidence", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Anyone can propose or challenge a change to the rating spec. The governing board makes the final decision on changes to the official spec. See the [contributing guide](https://github.com/openpickleball/.github/blob/main/CONTRIBUTING.md#changes-to-the-rating-spec).
+
+        If you found a way to change, forge, or manipulate ratings or match results by bypassing a control, follow the [security policy](https://github.com/openpickleball/.github/blob/main/SECURITY.md) instead.
+  - type: input
+    id: spec-reference
+    attributes:
+      label: Spec version and section
+      description: Leave this blank if the spec has not been published yet or the change is not tied to one section.
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or could be better?
+      description: Say which players or situations are affected.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Be specific enough that someone else could implement it.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Ideally, show how the change affects predictive accuracy (Brier score, log loss) and calibration on matches the engine has not seen.
+    validations:
+      required: true
+  - type: textarea
+    id: groups
+    attributes:
+      label: Effects on different groups
+      description: Include any effects on skill levels, recreational and tournament play, new players, and separate groups of players.
+    validations:
+      required: false
+  - type: textarea
+    id: data
+    attributes:
+      label: Data used
+      description: Describe where the data came from and how it was de-identified or generated. Do not attach real player data.
+    validations:
+      required: false
+  - type: checkboxes
+    id: agreements
+    attributes:
+      label: Before you submit
+      options:
+        - label: This proposal does not contain real player names, contact details, or match histories.
+          required: true
+        - label: I agree to follow the [Code of Conduct](https://github.com/openpickleball/.github/blob/main/CODE_OF_CONDUCT.md).
+          required: true
