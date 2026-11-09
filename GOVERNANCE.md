@@ -74,9 +74,20 @@ A charter amendment requires all of the following:
 
 An amendment can clarify or strengthen the five charter terms. It can't weaken or remove them.
 
-## Maintainers
+## Contributor roles
 
-Each repository has maintainers who review and merge changes. Existing maintainers add new ones based on sustained, good-faith contribution, and record the change publicly. Maintainers who are inactive for six months may step down or be moved to emeritus status.
+You don't need to join the GitHub organization to take part in OPEN. There is no application process. Roles are earned through contribution, and each role applies to one repository.
+
+| Role | What they can do | How someone gets the role |
+| --- | --- | --- |
+| Contributor | Open issues, join discussions, and submit pull requests | By taking part. No permissions are needed. |
+| Triager | Label, assign, and close issues and pull requests | A maintainer grants it after helpful participation in the repository |
+| Maintainer | Review and merge changes | An existing maintainer nominates them in a public issue, based on sustained, good-faith contribution, and a majority of the repository's maintainers agree |
+| Emeritus | Keeps recognition as a former maintainer, without merge access | By stepping down. Maintainers who are inactive for six months may step down or be moved to emeritus status. |
+
+During the founding phase, the steward may directly appoint the first maintainers of a repository that has no maintainers other than the steward. Each appointment must be recorded in a public issue.
+
+A contributor role gives no claim to a seat on the board. Board seats are filled as described above.
 
 ## Administrative access
 

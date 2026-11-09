@@ -55,6 +55,10 @@ Signed-off-by: Your Name <you@example.com>
 
 We can't accept commits without a sign-off.
 
+## Becoming a maintainer
+
+You don't need to join the GitHub organization to contribute, and there is no application. People earn triager and maintainer roles by contributing, and existing maintainers nominate new maintainers in public. See [contributor roles](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#contributor-roles).
+
 ## Licensing of contributions
 
 You keep the copyright to your work. Your contribution is licensed under the license of the repository you contribute to. See [how OPEN is licensed](https://github.com/openpickleball/.github/blob/main/LICENSING.md).
