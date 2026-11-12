@@ -13,7 +13,7 @@ Until the board is seated, the founder acts as interim steward. The steward:
 - Can't sell or transfer the project or its assets to anyone other than the board or an entity it controls
 - Can't declare an OPEN rating official
 
-The steward must seat the first board before any OPEN rating goes live, and no later than **[TODO: date]**.
+The steward must seat the first board before any OPEN rating goes live, and no later than **December 31, 2027**.
 
 When the board is seated, control of every project asset passes to the board or a legal entity it controls. That includes the GitHub organization, domain names, the OPEN name and logo, hosted services, accounts, and funds.
 
@@ -76,16 +76,22 @@ An amendment can clarify or strengthen the five charter terms. It can't weaken o
 
 ## Contributor roles
 
-You don't need to join the GitHub organization to take part in OPEN. There is no application process. Roles are earned through contribution, and each role applies to one repository.
+You don't need to join the GitHub organization to take part in OPEN. There is no application process. Access is earned through contribution, one step at a time.
 
 | Role | What they can do | How someone gets the role |
 | --- | --- | --- |
 | Contributor | Open issues, join discussions, and submit pull requests | By taking part. No permissions are needed. |
-| Triager | Label, assign, and close issues and pull requests | A maintainer grants it after helpful participation in the repository |
-| Maintainer | Review and merge changes | An existing maintainer nominates them in a public issue, based on sustained, good-faith contribution, and a majority of the repository's maintainers agree |
+| Organization member | Belongs to the `contributors` team, with triage access: label, assign, and close issues and pull requests | A maintainer invites them after their first merged pull request |
+| Role team member | Belongs to a role team (`backend`, `frontend`, `algorithm`, or `devops`), with write access to that team's repositories | A maintainer nominates them in a public issue, based on sustained, good-faith contribution, and a majority of the relevant repository's maintainers agree |
+| Maintainer | Belongs to the `maintainers` team. Reviews and merges changes, and nominates new members and maintainers | An existing maintainer nominates them in a public issue, based on sustained, good-faith contribution, and a majority of the repository's maintainers agree |
+| Owner | Administers the GitHub organization and acts on the board's decisions | Chosen by the board from maintainers with a proven track record. See [Administrative access](#administrative-access). |
 | Emeritus | Keeps recognition as a former maintainer, without merge access | By stepping down. Maintainers who are inactive for six months may step down or be moved to emeritus status. |
 
 During the founding phase, the steward may directly appoint the first maintainers of a repository that has no maintainers other than the steward. Each appointment must be recorded in a public issue.
+
+### Inactive members
+
+Organization members with no activity in any OPEN repository for 90 days are removed from the organization. Activity means commits, pull requests, issues, reviews, or comments. Removal is routine housekeeping, not a judgment, and anyone removed this way can return through the same path after their next merged pull request. This rule is separate from the six-month emeritus rule for maintainers.
 
 A contributor role gives no claim to a seat on the board. Board seats are filled as described above.
 

@@ -57,7 +57,7 @@ We can't accept commits without a sign-off.
 
 ## Becoming a maintainer
 
-You don't need to join the GitHub organization to contribute, and there is no application. People earn triager and maintainer roles by contributing, and existing maintainers nominate new maintainers in public. See [contributor roles](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#contributor-roles).
+You don't need to join the GitHub organization to contribute, and there is no application. After your first merged pull request, a maintainer invites you to the organization's `contributors` team. Sustained contribution can earn a role team with write access, and later a maintainer role. Existing maintainers nominate people for both in public. Members with no activity for 90 days are removed, and can return the same way. See [contributor roles](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#contributor-roles).
 
 ## Licensing of contributions
 
