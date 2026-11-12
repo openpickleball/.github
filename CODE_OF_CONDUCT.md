@@ -48,6 +48,10 @@ Tensions can occur between community members even when they are trying their bes
 
 When an incident does occur, it is important to report it promptly. To report a possible violation, please email **info@openpb.org** and describe what happened, when, and who was involved.
 
+**Who the Community Moderators are.** Until the governing board is seated, the founding steward is the only Community Moderator. After that, the board appoints the Community Moderators and lists them publicly. See [GOVERNANCE.md](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md).
+
+**If your report concerns a moderator.** A moderator who is involved in a report takes no part in handling it. Once the board is seated, you can send a report about a moderator to any board member instead. Until then, you can also report behavior on GitHub directly to GitHub, through its tools for reporting abuse.
+
 Community Moderators take reports of violations seriously and will make every effort to respond in a timely manner. They will investigate all reports of code of conduct violations, reviewing messages, logs, and recordings, or interviewing witnesses and other participants. Community Moderators will keep investigation and enforcement actions as transparent as possible while prioritizing safety and confidentiality. In order to honor these values, enforcement actions are carried out in private with the involved parties, but communicating to the whole community may be part of a mutually agreed upon resolution.
 
 
@@ -72,7 +76,7 @@ If an investigation by the Community Moderators finds that this Code of Conduct 
    2) Consequence: Access to all community spaces, tools, and communication channels is removed. In general, permanent bans should be rarely used, should have strong reasoning behind them, and should only be resorted to if working through other remedies has failed to change the behavior.
    3) Repair: There is no possible repair in cases of this severity.
 
-This enforcement ladder is intended as a guideline. It does not limit the ability of Community Managers to use their discretion and judgment, in keeping with the best interests of our community.
+This enforcement ladder is intended as a guideline. It does not limit the ability of Community Moderators to use their discretion and judgment, in keeping with the best interests of our community.
 
 
 ## Scope
