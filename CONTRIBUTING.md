@@ -24,7 +24,7 @@ Please report security problems privately. See the [security policy](https://git
 
 ## Changes to the rating spec
 
-Anyone can propose or challenge a change to the rating spec by opening an issue. Include the evidence for it, ideally how the change affects predictive accuracy and calibration on matches the engine hasn't seen. The governing board makes the final decision on changes to the official spec.
+Anyone can propose or challenge a change to the rating spec by opening an issue. Include the evidence for it, ideally how the change affects predictive accuracy and calibration on matches the engine hasn't seen. A change that gets support becomes a written proposal (an RFC) in the [`rating-spec` repository](https://github.com/openpickleball/rating-spec), following its [RFC process](https://github.com/openpickleball/rating-spec/blob/main/rfcs/README.md). The governing board makes the final decision on changes to the official spec.
 
 ## Pull requests
 

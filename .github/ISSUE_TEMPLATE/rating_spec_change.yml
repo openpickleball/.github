@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Anyone can propose or challenge a change to the rating spec. The governing board makes the final decision on changes to the official spec. See the [contributing guide](https://github.com/openpickleball/.github/blob/main/CONTRIBUTING.md#changes-to-the-rating-spec).
+        Anyone can propose or challenge a change to the rating spec. The governing board makes the final decision on changes to the official spec. A proposal with support moves to an RFC in the [rating-spec repository](https://github.com/openpickleball/rating-spec/blob/main/rfcs/README.md). See the [contributing guide](https://github.com/openpickleball/.github/blob/main/CONTRIBUTING.md#changes-to-the-rating-spec).
 
         If you found a way to change, forge, or manipulate ratings or match results by bypassing a control, follow the [security policy](https://github.com/openpickleball/.github/blob/main/SECURITY.md) instead.
   - type: input
