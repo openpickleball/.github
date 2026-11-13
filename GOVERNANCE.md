@@ -59,7 +59,7 @@ A majority of seated members is a quorum, and decisions pass by a majority of th
 | --- | --- | --- |
 | Day-to-day code and documentation changes | Repository maintainers | Pull request review |
 | Disagreements within a repository | Repository maintainers, then the board | Discussion first, then a maintainer majority. The board decides if that fails. |
-| Changes to the official rating spec | Governing board | The change process in the `rating-spec` repository, once published |
+| Changes to the official rating spec | Governing board | The [RFC process](https://github.com/openpickleball/rating-spec/blob/main/rfcs/README.md) in the `rating-spec` repository |
 | Which tools can show an OPEN rating | Governing board | Published conformance requirements |
 | Changes to this document | Governing board | Public pull request and majority vote |
 | Changes to the charter | Governing board | See below |
