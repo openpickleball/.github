@@ -1,5 +1,7 @@
 # openpickleball/.github
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/openpickleball/.github/badge)](https://scorecard.dev/viewer/?uri=github.com/openpickleball/.github)
+
 This repository holds the organization profile and shared community files for OPEN, the Open Pickleball Evaluation Network. To learn about the project itself, see the [organization page](https://github.com/openpickleball). The code lives in the [engine](https://github.com/openpickleball/engine), [backend](https://github.com/openpickleball/backend), and [frontend](https://github.com/openpickleball/frontend) repositories.
 
 GitHub uses the community files here as defaults for any repository in the organization that doesn't have its own copy. A repository's `LICENSE` is not inherited, so each repository needs its own.
