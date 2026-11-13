@@ -1,0 +1,61 @@
+# Opens a reminder issue on the first of each month for the membership
+# review in GOVERNANCE.md, with the access review added each quarter.
+# The issue names no one: membership can be private, so the review itself
+# runs locally (scripts/membership-review.sh) and its output stays private.
+name: Admin reminders
+
+on:
+  schedule:
+    - cron: "0 15 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reminder:
+    name: Open reminder issue
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open the issue unless this month's already exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          month="$(date -u +%Y-%m)"
+          title="Membership and access review: ${month}"
+          existing="$(gh issue list --state all --search "\"${title}\" in:title" --json title --jq "map(select(.title == \"${title}\")) | length")"
+          if [ "$existing" -gt 0 ]; then
+            echo "Issue for ${month} already exists."
+            exit 0
+          fi
+
+          body="$(cat <<'BODY'
+          Monthly review, as GOVERNANCE.md describes. Do not post member names or the script output here: membership can be private.
+
+          **Membership (every month)**
+          - [ ] An owner runs `bash scripts/membership-review.sh` from a checkout of this repository.
+          - [ ] Members with no activity for 90 days are removed, each with a short, friendly note that they can return after their next merged pull request.
+          - [ ] Contributors with a first merged pull request are invited to the `contributors` team.
+          BODY
+          )"
+
+          case "$(date -u +%m)" in
+            01|04|07|10)
+              body="${body}$(cat <<'BODY'
+
+
+          **Access (each quarter)**
+          - [ ] Owners: at least two once the founding phase ends.
+          - [ ] Team membership and team repository access match the roles in GOVERNANCE.md.
+          - [ ] Direct collaborators, deploy keys, webhooks, and installed GitHub Apps are all still needed.
+          - [ ] Repository rulesets, environment reviewers, and the org Actions policy are unchanged, or the changes are intended.
+          BODY
+          )"
+              ;;
+          esac
+
+          gh issue create --title "$title" --label governance --body "$body"
