@@ -1,6 +1,6 @@
 # Contributing to OPEN
 
-Thanks for helping build OPEN, the Open Pickleball Evaluation Network. This guide applies to every repository in the [openpickleball](https://github.com/openpickleball) organization unless a repository has its own `CONTRIBUTING.md`.
+Thanks for helping build OPEN, the Open Pickleball Evaluation Network. This guide applies to every repository in the [openpickleball](https://github.com/openpickleball) organization. A repository can also have its own `CONTRIBUTING.md` with steps for that repository. A repository guide adds to this one and does not replace it, so read both.
 
 Everyone who takes part agrees to the [mission charter](https://github.com/openpickleball/.github/blob/main/CHARTER.md) and the [Code of Conduct](https://github.com/openpickleball/.github/blob/main/CODE_OF_CONDUCT.md).
 
