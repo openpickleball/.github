@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
 # Lists every member of the openpickleball organization with their activity
 # in OPEN repositories over the last 90 days, and flags members with none.
 #
