@@ -72,9 +72,12 @@ Players never pay. Our money rules are simple:
 
 | Repository | Description |
 | --- | --- |
+| [rating-spec](https://github.com/openpickleball/rating-spec) | The official, versioned rating spec and its RFC process |
 | [engine](https://github.com/openpickleball/engine) | The reference rating engine |
 | [backend](https://github.com/openpickleball/backend) | Backend services and APIs |
 | [frontend](https://github.com/openpickleball/frontend) | The public app |
+| [developers](https://github.com/openpickleball/developers) | The developer site at [dev.openpb.org](https://dev.openpb.org) |
+| [brand-assets](https://github.com/openpickleball/brand-assets) | Logos, colors, typography, and the brand guidelines |
 | [.github](https://github.com/openpickleball/.github) | This organization profile and shared community files |
 
 More repositories will be listed here as they are published. You can also browse [everything in the organization](https://github.com/openpickleball?tab=repositories).
