@@ -95,6 +95,32 @@ Organization members with no activity in any OPEN repository for 90 days are rem
 
 A contributor role gives no claim to a seat on the board. Board seats are filled as described above.
 
+## Funds
+
+[Open Source Collective](https://www.oscollective.org) (OSC), a nonprofit fiscal host, holds OPEN's funds. They are never kept in a personal account. Every dollar in and out is published on [OPEN's Open Collective page](https://opencollective.com/open-pickleball).
+
+OSC is a 501(c)(6) organization, so donations through it are not tax-deductible in the United States.
+
+### Expense policy
+
+Funds may pay only for:
+
+- Hosting and infrastructure
+- Domain names
+- Services the project runs on, such as email delivery
+- Development tools for volunteer contributors
+- Accessibility and security work
+
+Funds never pay for advertising, or for anything that would break the charter.
+
+Every expense is submitted on Open Collective with its receipt or invoice attached. Before OSC pays, a collective admin must approve it. That admin can't be the person who submitted it or the person it pays.
+
+### Collective admins
+
+The collective must have at least two admins, so access to the funds never depends on one person. During the founding phase, the admins must be the steward and at least one other trusted person. The steward adds the second admin before the collective accepts any funds. The admins are listed on the collective's page, and every change to them is recorded in a public issue.
+
+Once the board is seated, the collective's admins are its seated members. Any other admin steps down, and a member who leaves the board stops being an admin. If the board moves the funds to a legal entity it controls, the collective is closed once its balance has moved.
+
 ## Administrative access
 
 After the founding phase, at least two people must hold owner access to the GitHub organization, and they must act on the board's decisions. Protected branches must require review before changes to the charter or to this document are merged.
