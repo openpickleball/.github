@@ -31,7 +31,7 @@ GitHub uses the community files here as defaults for any repository in the organ
 | [Support](SUPPORT.md) | Where to get help |
 | [Licensing](LICENSING.md) | How each part of OPEN is licensed |
 
-The issue forms and pull request template in [`.github`](.github) are shared the same way. Blank issues are turned off, so every new issue starts from a form: a bug report, a feature request, community feedback, or a rating spec change.
+The issue forms and pull request template in [`.github`](.github) are shared the same way. Blank issues are turned off, so every new issue starts from one of four forms: bug report, feature or project idea, player, club, or platform feedback, or rating spec change.
 
 ## What else is here
 
