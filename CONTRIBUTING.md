@@ -18,6 +18,8 @@ You don't need to write code:
 
 Open an issue before starting anything large, so nobody spends time on work that can't be accepted. Use the repository the issue is about. If you aren't sure which one that is, or the project doesn't have a repository yet, [open it in `.github`](https://github.com/openpickleball/.github/issues/new).
 
+New to OPEN and want to pick up work that's already planned? Look at the [open issues labeled `good first issue`](https://github.com/search?q=org%3Aopenpickleball+label%3A%22good+first+issue%22+is%3Aopen+is%3Aissue&type=issues) across OPEN's repositories. Each one is a good place to start.
+
 Before proposing a new feature, ask whether it makes the standard more accurate, more trusted, or easier to adopt. If it doesn't, it probably belongs in a partner's product.
 
 Please report security problems privately. See the [security policy](https://github.com/openpickleball/.github/blob/main/SECURITY.md).
@@ -25,6 +27,14 @@ Please report security problems privately. See the [security policy](https://git
 ## Changes to the rating spec
 
 Anyone can propose or challenge a change to the rating spec by opening an issue. Include the evidence for it, ideally how the change affects predictive accuracy and calibration on matches the engine hasn't seen. A change that gets support becomes a written proposal (an RFC) in the [`rating-spec` repository](https://github.com/openpickleball/rating-spec), following its [RFC process](https://github.com/openpickleball/rating-spec/blob/main/rfcs/README.md). The governing board makes the final decision on changes to the official spec.
+
+## Labels
+
+Every OPEN repository uses the same set of labels, listed in [`labels.toml`](https://github.com/openpickleball/.github/blob/main/labels.toml) in this repository. A repository can add labels of its own, such as `area:` labels for parts of its code, but it can't redefine a shared one.
+
+To change the shared set, open a pull request against `labels.toml`. After it merges, an organization owner runs `python3 scripts/sync_labels.py` to see what would change in each repository, then runs it again with `--apply` to make those changes.
+
+To rename a shared label, change its `name` and add the old name to its `aliases`. In a repository that has only the old label, the sync renames it, and its issues and pull requests keep it. In a repository that has both, the sync adds the new label to every issue and pull request with the old one, then deletes the old one. It won't do that in a repository with discussions turned on, because it can't move discussion labels. It reports the merge as refused and changes nothing for that label. An owner then adds the new label to its issues, pull requests, and discussions by hand, and deletes the old one. Without the alias, the sync creates a new label and leaves the old one in place. Removing a label from `labels.toml` changes nothing in the repositories: the sync never deletes a label that isn't in the file.
 
 ## Pull requests
 

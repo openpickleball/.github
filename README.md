@@ -40,8 +40,9 @@ The issue forms and pull request template in [`.github`](.github) are shared the
 - [`.github/workflows`](.github/workflows): this repository's own checks (DCO sign-off, OpenSSF Scorecard, and the script tests), a monthly reminder issue for the membership review in [GOVERNANCE.md](GOVERNANCE.md), and the reusable `pull-request.yml` workflow every OPEN repository calls to check commit messages and pull request descriptions (its header shows how to call it).
 - [`actions/pull-request-check`](actions/pull-request-check): the step that workflow runs.
 - [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml): the `commit-message` hook, which runs the same commit message rules locally.
-- [`scripts`](scripts): `membership-review.sh`, which an organization owner runs locally for that review (it only reports and never changes membership), and `check_pull_request.py`, the commit message and description rules, with its tests.
+- [`labels.toml`](labels.toml): the labels every OPEN repository shares. The contributing guide explains how to change them.
+- [`scripts`](scripts): `membership-review.sh`, which an organization owner runs locally for that review (it only reports and never changes membership); `check_pull_request.py`, the commit message and description rules; and `sync_labels.py`, which an organization owner runs locally to bring every repository's labels in line with `labels.toml` (it only prints a plan unless given `--apply`). The two Python scripts have their tests next to them.
 
 ## License
 
-The documentation here is licensed under CC BY 4.0 ([`LICENSE`](LICENSE)), and the code in `scripts`, `actions`, and the workflows under Apache-2.0 ([`LICENSE-APACHE`](LICENSE-APACHE)). The Code of Conduct is adapted from the Contributor Covenant and licensed under CC BY-SA 4.0. See [LICENSING.md](LICENSING.md) for details.
+The documentation here is licensed under CC BY 4.0 ([`LICENSE`](LICENSE)), and the code in `scripts`, `actions`, and the workflows, plus `labels.toml`, under Apache-2.0 ([`LICENSE-APACHE`](LICENSE-APACHE)). The Code of Conduct is adapted from the Contributor Covenant and licensed under CC BY-SA 4.0. See [LICENSING.md](LICENSING.md) for details.
