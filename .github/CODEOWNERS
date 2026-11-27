@@ -1,4 +1,8 @@
-# Changes to the project's founding documents need review from their owners.
-# Replace this with a board or maintainers team once one exists.
-/CHARTER.md @GeoBradDev
-/GOVERNANCE.md @GeoBradDev
+# Changes to the project's founding documents, and to this file, need an
+# approving review from a code owner who didn't write or push any part of the
+# change. The primary owner and the backup owner review each other's changes
+# (see GOVERNANCE.md, "Administrative access"). Replace them with a board or
+# maintainers team once one exists.
+/CHARTER.md @GeoBradDev @ccirrincione
+/GOVERNANCE.md @GeoBradDev @ccirrincione
+/.github/CODEOWNERS @GeoBradDev @ccirrincione

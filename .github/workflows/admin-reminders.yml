@@ -38,7 +38,7 @@ jobs:
 
           **Membership (every month)**
           - [ ] An owner runs `bash scripts/membership-review.sh` from a checkout of this repository.
-          - [ ] Members with no activity for 90 days are removed, each with a short, friendly note that they can return after their next merged pull request.
+          - [ ] Members other than owners with no activity for 90 days are removed, each with a short, friendly note that they can return after their next merged pull request.
           - [ ] Contributors with a first merged pull request are invited to the `contributors` team.
           BODY
           )"
@@ -49,7 +49,7 @@ jobs:
 
 
           **Access (each quarter)**
-          - [ ] Owners: at least two once the founding phase ends.
+          - [ ] Owners: at least two, the primary owner and the backup owner.
           - [ ] Team membership and team repository access match the roles in GOVERNANCE.md.
           - [ ] Direct collaborators, deploy keys, webhooks, and installed GitHub Apps are all still needed.
           - [ ] Repository rulesets, environment reviewers, and the org Actions policy are unchanged, or the changes are intended.
