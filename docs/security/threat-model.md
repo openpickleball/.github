@@ -26,7 +26,7 @@ Fake or colluding matches, forged confirmations, getting around organizer verifi
 - A match a player reports counts only once a player on the other team confirms it, or a verified organizer records the same match. Any participant can dispute a match, which stops it counting until the dispute is settled ([ADR 0013](https://github.com/openpickleball/backend/blob/main/docs/adr/0013-match-confirmation-and-changes.md)).
 - Only organizers that a moderator has verified can submit matches that count at once ([ADR 0021](https://github.com/openpickleball/backend/blob/main/docs/adr/0021-organizers-are-the-trusted-submitters.md)), and their members must use two-factor authentication to act for them ([ADR 0043](https://github.com/openpickleball/backend/blob/main/docs/adr/0043-mfa-totp-and-recovery-codes.md)).
 - Duplicate matches are refused or held ([ADR 0011](https://github.com/openpickleball/backend/blob/main/docs/adr/0011-duplicate-match-detection.md)). Unusual volumes from trusted submitters are flagged ([ADR 0049](https://github.com/openpickleball/backend/blob/main/docs/adr/0049-flag-unusual-submissions.md)). A match dated outside its event is refused, and an implausible number of matches for one player in a day is flagged ([ADR 0052](https://github.com/openpickleball/backend/blob/main/docs/adr/0052-plausibility-checks-event-dates-and-player-daily-matches.md)).
-- Changes to matches and ratings are recorded in an append-only audit log that the database refuses to edit or delete ([ADR 0007](https://github.com/openpickleball/backend/blob/main/docs/adr/0007-append-only-audit-log.md)).
+- Changes to matches and ratings are recorded in an append-only audit log. The app's code can't edit or delete its rows, and a database trigger refuses edits and deletes ([ADR 0007](https://github.com/openpickleball/backend/blob/main/docs/adr/0007-append-only-audit-log.md)).
 - Nothing targets sandbagging yet. No OPEN rating is live, so there is no rating to sandbag.
 
 ### Account takeover
@@ -43,7 +43,7 @@ Credential stuffing, phishing, session theft, and takeover of a maintainer's or 
 An API that returns more than it should, an exposed backup or export, or personal data in logs.
 
 - Legal name, birth year and month, gender division, and two-factor secrets are encrypted in the database. Staff see a player's legal name, birth year and month, and gender division only through a deliberate reveal that is recorded in the audit log ([ADR 0046](https://github.com/openpickleball/backend/blob/main/docs/adr/0046-encrypt-personal-data-fields.md)).
-- API throttling limits how many requests one signed-in account can make. A per-IP throttle is built for public operations, but none is mounted yet ([ADR 0030](https://github.com/openpickleball/backend/blob/main/docs/adr/0030-api-throttling.md)).
+- API throttling limits how many requests one signed-in account can make. A per-IP throttle is built for public operations, but none is mounted yet ([ADR 0030](https://github.com/openpickleball/backend/blob/main/docs/adr/0030-api-throttling.md), [ADR 0031](https://github.com/openpickleball/backend/blob/main/docs/adr/0031-rating-lookup-and-history.md)).
 - The audit log never holds passwords, tokens, secrets, or recovery codes ([ADR 0007](https://github.com/openpickleball/backend/blob/main/docs/adr/0007-append-only-audit-log.md)).
 
 ### Supply chain
@@ -62,6 +62,7 @@ A compromised dependency, GitHub Action, or workflow.
 - Several assets, including the domain registrar, DNS, hosting, and email, have no second person who can recover them yet ([Account recovery](../../GOVERNANCE.md#account-recovery)).
 - Security reports go to the same general inbox as other mail.
 - During the founding phase, if the steward can't be reached, the backup owner can act as an owner only after 30 days or on a written request ([Backup owner](../../GOVERNANCE.md#backup-owner)). That is longer than the Critical fix target.
+- A database trigger can't stop the audit log table's owner or a database superuser, who can turn it off ([ADR 0007](https://github.com/openpickleball/backend/blob/main/docs/adr/0007-append-only-audit-log.md)). The work to keep the app's database role from being either is still open ([backend #103](https://github.com/openpickleball/backend/issues/103)).
 - A repository with one maintainer has no required second review ([Required review in each repository](../../GOVERNANCE.md#required-review-in-each-repository)).
 
 ## Keeping this current
