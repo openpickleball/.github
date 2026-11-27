@@ -34,6 +34,26 @@ Anyone can propose or challenge a change to the rating spec by opening an issue.
 4. Sign off every commit, as described below.
 5. Write each commit message as described in "Commit messages" below. Leave a type prefix such as `fix:` off the pull request title too.
 
+## What happens after you open a pull request
+
+The maintainers of the repository you opened it in respond to your pull request and review it. OPEN is run by volunteers, and we still hold ourselves to a target: you get a first response within 3 business days. A first response can be a review, a question, or a note saying when we'll get to it. It isn't always a full review or a merge.
+
+If 3 business days pass with no reply, comment on the pull request to remind us.
+
+When a reviewer requests changes, push updates to the same pull request, or reply if you disagree. Either way, the reviewer then looks at it again.
+
+If we're waiting on you and you don't reply for 30 days, we close the pull request with a friendly note. Ask us to reopen it, or open a new one, when you're ready to pick it back up.
+
+### When we rework your pull request
+
+Sometimes a maintainer reworks your change, or finishes it in a new pull request that replaces yours. When that happens, you still get credit:
+
+- The new commits carry a `Co-Authored-By:` trailer with the name and email address from your original commits, for example `Co-Authored-By: Your Name <you@example.com>`.
+- The comment that closes your pull request thanks you and links the new pull request.
+- A maintainer adds you to the [contributor list](https://github.com/openpickleball/.github/blob/main/CONTRIBUTORS.md).
+
+If the email address in your commits isn't public, the trailer uses your GitHub noreply address instead: `ID+username@users.noreply.github.com`. `ID` is your GitHub account number, which `gh api users/username --jq .id` shows. Maintainers never guess or publish a private address.
+
 ## Commit messages
 
 Write each commit message like this:
