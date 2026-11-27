@@ -17,28 +17,30 @@ The person leading can ask maintainers or outside experts for help. Anyone broug
 | Medium | A weakness that exposes little data or needs unusual conditions to use, such as an attacker who already holds a victim's session. | 90 days |
 | Low | A hardening gap with no direct way to harm players, accounts, or ratings. | Best effort |
 
-Fix targets count from the day the report is confirmed. These are the same targets the [security policy](../../SECURITY.md#what-to-expect) promises.
+Fix targets count from the day the report arrives, the same day the disclosure window starts. These are the targets the [security policy](../../SECURITY.md#what-to-expect) says we aim for.
 
 ## Keep it private
 
-Incident work happens in a private GitHub security advisory on the affected repository, or in the advisory's private fork. Never discuss an open incident in a public issue, pull request, discussion, or commit message. Fixes are written and reviewed in the private fork and merged when the advisory is published.
+Incident work happens in a private GitHub security advisory on the affected repository, or in the advisory's temporary private fork. Keep the details out of public issues, pull requests, discussions, and commit messages until the fix ships. Before then, the only public records are the summaries this plan and [GOVERNANCE.md](../../GOVERNANCE.md) require, such as the incident summary or a backup owner's record of acting.
+
+GitHub Actions don't run in the private fork, so run the tests locally there. Once the fix is reviewed, merge it, deploy it to every affected service, and then publish the advisory.
 
 ## Steps
 
-1. **Receive and acknowledge.** Reply to the reporter within 5 business days, as the security policy promises. Open a private security advisory for the report if the reporter didn't.
+1. **Receive and acknowledge.** Aim to reply to the reporter within 5 business days, as the security policy says. Open a private security advisory for the report if the reporter didn't.
 2. **Assess.** Reproduce the problem, work out what it affects, and set a severity from the table above. Tell the reporter the severity and the fix target.
 3. **Contain.** Stop the harm before fixing the cause. That can mean turning off a feature, revoking an account's access or a partner application, voiding affected matches, or taking a service offline for a while.
 4. **Rotate secrets.** Replace every secret that may have been exposed, not just the ones known to be. The kinds of secret OPEN holds are:
-   - The Django secret key
+   - The Django secret key. If the old key was exposed, don't keep it in `SECRET_KEY_FALLBACKS`. Passkeys made before the rotation then stop working for passkey login until the player removes and adds them again ([ADR 0056](https://github.com/openpickleball/backend/blob/main/docs/adr/0056-passkeys.md)), and every device looks new, so each account's next sign-in sends an alert ([ADR 0047](https://github.com/openpickleball/backend/blob/main/docs/adr/0047-account-security-limits-and-sessions.md)).
    - The field encryption keys. Follow the rotation steps in the [backend README](https://github.com/openpickleball/backend/blob/main/README.md#settings); don't remove an old key until the re-encryption has finished.
    - Database and broker credentials
    - The email provider's API key
    - OAuth client secrets for partner applications
    - GitHub tokens and deploy keys
-5. **Fix.** Write the fix in the private fork, with a test that shows the problem is gone, and have it reviewed. Ship it to every affected repository and service.
+5. **Fix.** Write the fix in the private fork, with a test that shows the problem is gone, run the tests locally, and have it reviewed. Merge it and deploy it to every affected service.
 6. **Tell people.** See [Telling people](#telling-people).
 7. **Publish.** See [Publishing](#publishing).
-8. **Review.** Within 30 days of the fix shipping, write down what happened, what went well, and what to change. Update this plan and the [threat model](threat-model.md) if they need it. The review is published the same way as the incident summary.
+8. **Review.** Aim to write down what happened, what went well, and what to change within 30 days of the fix shipping. Update this plan and the [threat model](threat-model.md) if they need it. Publish the review under the same rules as the incident summary.
 
 ## Telling people
 
@@ -58,9 +60,9 @@ Each notice says:
 
 ## Publishing
 
-Every incident that affects players, partners, or ratings gets a public summary. It follows the rules for security records in [Administrative access](../../GOVERNANCE.md#administrative-access) and [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes): a summary with no identifying details until the fix ships, and the full explanation after.
+Every incident that affects players, partners, or ratings gets a public record. Before the fix ships, it is a summary only. After the fix ships, it is the full explanation. Either way, it leaves out details that identify anyone involved, as [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes) requires for security issues. Records that [Administrative access](../../GOVERNANCE.md#administrative-access) requires follow its own rule: a summary until the fix ships, and the full explanation after.
 
-A vulnerability in OPEN code also gets a published GitHub security advisory on the affected repository. It credits the reporter unless they asked to stay anonymous.
+A vulnerability in OPEN code also gets a published GitHub security advisory on the affected repository. A problem outside the code, such as with hosting, DNS, or email, has no repository, so the public record serves instead. Either way, credit the reporter unless they asked to stay anonymous.
 
 ## Checklist
 
@@ -72,7 +74,8 @@ Use this during an incident. Keep notes in the private advisory as you go.
 - [ ] Tell the reporter the severity and the fix target
 - [ ] Contain the harm
 - [ ] Rotate every secret that may have been exposed
-- [ ] Fix, test, review, and ship in the private fork
+- [ ] Fix, test locally, and review in the private fork
+- [ ] Merge and deploy the fix
 - [ ] Notify affected players and partners (aim for 72 hours after confirming)
 - [ ] Publish the summary, then the full explanation after the fix ships
 - [ ] Publish the security advisory, with credit

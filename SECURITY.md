@@ -30,7 +30,7 @@ Problems with the rating math that don't involve bypassing a control are welcome
 
 We aim to acknowledge reports within 5 business days. We'll keep you updated while we investigate and fix the problem.
 
-Once we confirm a report, we set its severity and aim to fix it within:
+When we assess a report, we set its severity. We aim to fix it within:
 
 | Severity | Fix target |
 | --- | --- |
@@ -39,9 +39,9 @@ Once we confirm a report, we set its severity and aim to fix it within:
 | [Medium](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md#severity) | 90 days |
 | [Low](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md#severity) | Best effort |
 
-Each target counts from the day we confirm the report.
+Each target counts from the day we receive the report.
 
-We announce each fix in a GitHub security advisory on the affected repository. The advisory credits you unless you'd prefer to stay anonymous.
+We announce a fix for a vulnerability in OPEN code in a GitHub security advisory on the affected repository. A problem outside the code, such as with hosting, DNS, or email, is announced in the public incident summary instead. Either way, we credit you unless you'd prefer to stay anonymous.
 
 ## Disclosure
 
