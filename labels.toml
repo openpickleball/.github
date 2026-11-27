@@ -1,0 +1,177 @@
+# SPDX-License-Identifier: Apache-2.0
+# The labels every OPEN repository shares. A repository may add its own
+# labels (such as area: labels) but must not redefine one of these.
+#
+# To change this set, open a pull request against this file. After it
+# merges, an organization owner runs `python3 scripts/sync_labels.py` (a dry
+# run) and then `python3 scripts/sync_labels.py --apply`.
+#
+# Each label has a name, a color (six hex digits, no #), a description (at
+# most 100 characters), and aliases: old names that the sync renames to, or
+# merges into, this label. Names and aliases are ASCII, at most 50
+# characters, with no commas and no spaces at either end.
+#
+# To rename a label, change its name and add the old name to its aliases.
+# Without the alias, the sync creates the new label and leaves the old one.
+# Removing a label from this file changes nothing in the repositories: the
+# sync never deletes a label that is not listed here.
+
+# Type
+
+[[label]]
+name = "bug"
+color = "d73a4a"
+description = "Something isn't working"
+aliases = []
+
+[[label]]
+name = "enhancement"
+color = "a2eeef"
+description = "New feature or request"
+aliases = ["type:feature"]
+
+[[label]]
+name = "documentation"
+color = "0075ca"
+description = "Improvements or additions to documentation"
+aliases = ["type:docs"]
+
+[[label]]
+name = "type:chore"
+color = "5319e7"
+description = "Tooling, infrastructure, or maintenance"
+aliases = []
+
+[[label]]
+name = "type:spike"
+color = "fbca04"
+description = "Decision, investigation, or ADR"
+aliases = []
+
+[[label]]
+name = "type:epic"
+color = "3e4b9e"
+description = "Parent issue that tracks sub-issues"
+aliases = []
+
+# Topic
+
+[[label]]
+name = "accessibility"
+color = "f143ab"
+description = "Barrier affecting people with disabilities"
+aliases = []
+
+[[label]]
+name = "governance"
+color = "0e8a16"
+description = "Charter, board, and decision-making"
+aliases = []
+
+[[label]]
+name = "rating-spec"
+color = "5319e7"
+description = "Changes to the official rating spec"
+aliases = []
+
+[[label]]
+name = "feedback"
+color = "1d76db"
+description = "Input from players, clubs, and platforms"
+aliases = []
+
+# Priority
+
+[[label]]
+name = "priority:p0"
+color = "b60205"
+description = "Blocks a release or other work: do it first"
+aliases = ["severity:blocker"]
+
+[[label]]
+name = "priority:p1"
+color = "d93f0b"
+description = "Needed for the current milestone"
+aliases = ["severity:high"]
+
+[[label]]
+name = "priority:p2"
+color = "fef2c0"
+description = "Later, or low impact"
+aliases = ["severity:medium", "severity:low"]
+
+# Status
+
+[[label]]
+name = "triage"
+color = "d4c5f9"
+description = "Waiting for a maintainer to review"
+aliases = []
+
+[[label]]
+name = "needs-evidence"
+color = "fbca04"
+description = "Needs data or analysis to support it"
+aliases = []
+
+[[label]]
+name = "needs-decision"
+color = "d93f0b"
+description = "Waiting on a maintainer decision"
+aliases = []
+
+[[label]]
+name = "status:blocked"
+color = "000000"
+description = "Waiting on an external decision or dependency"
+aliases = []
+
+[[label]]
+name = "ready-for-review"
+color = "0e8a16"
+description = "Checks green, awaiting human review"
+aliases = ["ready-for-human-review"]
+
+[[label]]
+name = "follow-up"
+color = "c5def5"
+description = "Found while working another issue"
+aliases = []
+
+# Community
+
+[[label]]
+name = "good first issue"
+color = "7057ff"
+description = "Good for newcomers"
+aliases = []
+
+[[label]]
+name = "help wanted"
+color = "008672"
+description = "Extra attention is needed"
+aliases = []
+
+[[label]]
+name = "question"
+color = "d876e3"
+description = "Further information is requested"
+aliases = []
+
+[[label]]
+name = "duplicate"
+color = "cfd3d7"
+description = "This issue or pull request already exists"
+aliases = []
+
+[[label]]
+name = "invalid"
+color = "e4e669"
+description = "This doesn't seem right"
+aliases = []
+
+[[label]]
+name = "wontfix"
+color = "ffffff"
+description = "This will not be worked on"
+aliases = []

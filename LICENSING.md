@@ -33,7 +33,7 @@ Player data is about real people, so the licenses above don't apply to it. Playe
 
 This repository holds both documentation and code, so it has two license files:
 
-- Code (the `scripts` directory, and any other script or program added here) is licensed under Apache-2.0, in `LICENSE-APACHE`. Each script carries an `SPDX-License-Identifier: Apache-2.0` line.
+- Code (the `scripts` directory, the `labels.toml` file the label sync reads, and any other script or program added here) is licensed under Apache-2.0, in `LICENSE-APACHE`. Each script, and `labels.toml`, carries an `SPDX-License-Identifier: Apache-2.0` line.
 - Everything else is documentation, licensed under CC BY 4.0, in `LICENSE`. Creative Commons advises against its licenses for software, which is why the code is licensed separately.
 
 The exception is `CODE_OF_CONDUCT.md`, which is adapted from the Contributor Covenant and licensed under CC BY-SA 4.0.

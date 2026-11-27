@@ -96,7 +96,7 @@ Everyone who takes part agrees to the mission charter above. You don't need to w
 
 Before proposing a new feature, ask whether it makes the standard more accurate, more trusted, or easier to adopt. If it doesn't, it probably belongs in a partner's product.
 
-To get started, [open an issue](https://github.com/openpickleball/.github/issues/new) with your idea, question, or feedback. The [contributor list](https://github.com/openpickleball/.github/blob/main/CONTRIBUTORS.md) thanks everyone who has helped so far, with code or without.
+To get started, [open an issue](https://github.com/openpickleball/.github/issues/new) with your idea, question, or feedback. If you'd rather pick up work that's already planned, start with an [open `good first issue`](https://github.com/search?q=org%3Aopenpickleball+label%3A%22good+first+issue%22+is%3Aopen+is%3Aissue&type=issues) in any OPEN repository. The [contributor list](https://github.com/openpickleball/.github/blob/main/CONTRIBUTORS.md) thanks everyone who has helped so far, with code or without.
 
 ## Website and community
 
