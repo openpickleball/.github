@@ -4,7 +4,7 @@ This document explains how decisions are made for OPEN. It carries out the [miss
 
 ## Current status: founding phase
 
-The charter says no person controls OPEN, including the founder. That is the goal, and it is not true yet. The governing board has not been seated, and the founder is currently the only administrator of the GitHub organization.
+The charter says no person controls OPEN, including the founder. That is the goal, and it is not true yet. The governing board has not been seated. The founder is the primary owner of the GitHub organization, and a backup owner holds owner access for emergencies (see [Administrative access](#administrative-access)).
 
 Until the board is seated, the founder acts as interim steward. The steward:
 
@@ -84,14 +84,14 @@ You don't need to join the GitHub organization to take part in OPEN. There is no
 | Organization member | Belongs to the `contributors` team, with triage access: label, assign, and close issues and pull requests | A maintainer invites them after their first merged pull request |
 | Role team member | Belongs to a role team (`backend`, `frontend`, `algorithm`, or `devops`), with write access to that team's repositories | A maintainer nominates them in a public issue, based on sustained, good-faith contribution, and a majority of the relevant repository's maintainers agree |
 | Maintainer | Belongs to the `maintainers` team. Reviews and merges changes, and nominates new members and maintainers | An existing maintainer nominates them in a public issue, based on sustained, good-faith contribution, and a majority of the repository's maintainers agree |
-| Owner | Administers the GitHub organization and acts on the board's decisions | Chosen by the board from maintainers with a proven track record. See [Administrative access](#administrative-access). |
+| Owner | Administers the GitHub organization and acts on the board's decisions | Chosen by the board from maintainers with a proven track record. The backup owner need not be a maintainer, and during the founding phase the steward appoints them. See [Administrative access](#administrative-access). |
 | Emeritus | Keeps recognition as a former maintainer, without merge access | By stepping down. Maintainers who are inactive for six months may step down or be moved to emeritus status. |
 
 During the founding phase, the steward may directly appoint the first maintainers of a repository that has no maintainers other than the steward. Each appointment must be recorded in a public issue.
 
 ### Inactive members
 
-Organization members with no activity in any OPEN repository for 90 days are removed from the organization. Activity means commits, pull requests, issues, reviews, or comments. Removal is routine housekeeping, not a judgment, and anyone removed this way can return through the same path after their next merged pull request. This rule is separate from the six-month emeritus rule for maintainers.
+Organization members with no activity in any OPEN repository for 90 days are removed from the organization. Activity means commits, pull requests, issues, reviews, or comments. Removal is routine housekeeping, not a judgment, and anyone removed this way can return through the same path after their next merged pull request. This rule is separate from the six-month emeritus rule for maintainers. Owners are exempt, because the backup owner is often inactive by design.
 
 A contributor role gives no claim to a seat on the board. Board seats are filled as described above.
 
@@ -123,7 +123,63 @@ Once the board is seated, the collective's admins are its seated members. Any ot
 
 ## Administrative access
 
-After the founding phase, at least two people must hold owner access to the GitHub organization, and they must act on the board's decisions. Protected branches must require review before changes to the charter or to this document are merged.
+OPEN must always have two owners of the GitHub organization, including during the founding phase: a primary owner and a backup owner. When either seat is empty, whoever appoints that seat fills it within 30 days. During the founding phase, the steward is the primary owner. Once the board is seated, the board names the primary owner, and owners act on the board's decisions.
+
+Records this section requires are public. For a security problem that isn't public yet, a record gives only a summary until the fix ships, and the full explanation after.
+
+### Backup owner
+
+The backup owner holds owner access so that OPEN never depends on one account. During the founding phase, the steward appoints the backup owner. Once the board is seated, the board does. Each appointment, and every change to it, is recorded in a public issue.
+
+Reviewing changes to the charter and governance files is part of the role. It needs no trigger and no public issue.
+
+Beyond that review, the backup owner may act as an owner only when:
+
+- The primary owner can't be reached for 30 days
+- The primary owner's account is compromised or locked
+- The primary owner asks them to, in writing, in a public issue
+- The board asks them to, once it is seated
+
+When they act, the backup owner:
+
+- Can't change the charter except to correct errors or clarify wording
+- Can't sell or transfer the project or its assets to anyone other than the board or an entity it controls
+- Can't declare an OPEN rating official
+- Records each action in a public issue that says which trigger applied. For the 30-day trigger, it also names the channels they used to try to reach the primary owner, without giving contact details.
+
+### Reviewing the charter and governance files
+
+A change to `CHARTER.md`, `GOVERNANCE.md`, or `.github/CODEOWNERS` needs an approving review from a code owner who didn't write or push any part of the change. The code owners are listed in `.github/CODEOWNERS`.
+
+GitHub can't fully enforce this. Anyone with admin access to the repository, which includes every owner, can skip the review or change the rule itself. They may skip the review only from inside a pull request, only to fix a security problem or restore access, and they must explain why in that pull request. Every change to the repository's rules is recorded in a public issue.
+
+### Required review in each repository
+
+Once a repository has at least two maintainers (the primary owner counts as one if they maintain it), its default branch must require one approving review for every change. An owner sets this up within 7 days of the second maintainer's appointment and records it in that appointment issue.
+
+If a repository drops back to one maintainer, that maintainer can't approve their own changes. The requirement may then be lifted until there are two maintainers again. Lifting it is recorded in a public issue, and never lifts the review of the charter and governance files.
+
+### Account recovery
+
+Every account that controls an OPEN asset uses two-factor authentication, and a hardware security key if the service supports one.
+
+Each asset must be recoverable by two people:
+
+- If the service allows a second user, each person has their own login.
+- If it allows only one login, the second holder keeps a sealed, printed copy of everything needed to sign in, including the recovery codes, offline. The copy is replaced whenever any of it changes, and is never sent by chat or email.
+
+Nobody shares their personal recovery codes. Recovery codes are stored offline, either printed or in an offline password manager. They are never kept in a repository, an issue, or a shared drive.
+
+| Asset | Primary | Second |
+| --- | --- | --- |
+| GitHub organization | Primary owner | Backup owner |
+| Domain registrar for openpb.org | Primary owner | Pending |
+| DNS for openpb.org | Primary owner | Pending |
+| Hosting | Primary owner | Pending |
+| Email for openpb.org | Primary owner | Pending |
+| Open Collective | Steward | Second [collective admin](#collective-admins) (pending, issue #7) |
+
+Pending means no second person can recover that asset yet.
 
 ## Related documents
 
