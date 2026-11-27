@@ -32,7 +32,7 @@ Domain skills: humanizer: invoke (new public-facing prose). superpowers:test-dri
    - Scope: the hosted service (backend API, the public app, the developer site, the GitHub organization), with a note that no OPEN rating is live and the hosted service does not yet hold real player data in production.
    - Assets: player data (accounts, legal name, birth year and month, gender division, contact email), ratings and rating history, match results and confirmations, partner OAuth credentials, the GitHub organization and its repositories, and the openpb.org domain, DNS, and email.
    - Actors and threats: rating manipulation (fake or colluding matches, forged confirmations, bypassing organizer verification, sandbagging), account takeover (credential stuffing, phishing, session theft, a maintainer or owner account), data leaks (an API returning more than it should, an exposed backup or export, logs), and supply chain (a compromised dependency or workflow). The rating manipulation items match SECURITY.md's scope.
-   - Current controls per threat, stated only where they exist today and linking backend's README or ADRs for each backend control: score confirmation and disputes (ADR 0013), organizer verification and trusted submitters (ADR 0021), duplicate and plausibility checks (ADRs 0011, 0049, 0052), MFA with TOTP, recovery codes, and passkeys (ADRs 0043, 0056), login rate limits and the breached password check (ADRs 0039, 0047), API throttling (ADR 0030), field encryption (ADR 0046), the append-only audit log (ADR 0007), security headers (ADR 0040), two-factor authentication on every account that controls an OPEN asset and two-person recovery (GOVERNANCE.md), code owner review of governance files, DCO sign-off, OpenSSF Scorecard, and secret scanning for provider patterns.
+   - Current controls per threat, stated only where they exist today and linking backend's README or ADRs for each backend control: score confirmation and disputes (ADR 0013), organizer verification and trusted submitters (ADR 0021), duplicate and plausibility checks (ADRs 0011, 0049, 0052), MFA with TOTP, recovery codes, and passkeys (ADRs 0043, 0056), login rate limits and the breached password check (ADR 0047; ADR 0039, which the plan first named, covers only the signup password check, so the threat model cites 0047 alone), API throttling (ADR 0030), field encryption (ADR 0046), the append-only audit log (ADR 0007), security headers (ADR 0040), two-factor authentication on every account that controls an OPEN asset and two-person recovery (GOVERNANCE.md), code owner review of governance files, DCO sign-off, OpenSSF Scorecard, and secret scanning for provider patterns.
    - Known gaps, including: secret scanning for non-provider patterns and validity checks is off (Free plan); several assets have no second person who can recover them (GOVERNANCE.md "Account recovery"); reports share a general inbox; and repositories with one maintainer have no required second review.
    - When to update it: when a new asset, actor, or control appears, and at least once before ratings go live.
 3. SECURITY.md:
@@ -63,6 +63,14 @@ Domain skills: humanizer: invoke (new public-facing prose). superpowers:test-dri
 5. Run humanizer over the new prose. Check for emojis and em dashes: `grep -nP '\x{2014}|[\x{1F300}-\x{1FAFF}\x{2600}-\x{27BF}]' <files>` prints nothing.
 6. Run the gate: `python3 -I scripts/test_check_pull_request.py` and `python3 -I scripts/test_sync_labels.py`.
 7. One commit, signed off (`git commit -s`), with an imperative subject under 72 characters, no type prefix, and a body that says why and `Part of #21`.
+
+## Departures found while writing
+
+- ADR 0039 is the signup password check. Login rate limits and the breached password check are ADR 0047, so the threat model cites 0047 alone.
+- ADR 0052 refuses a match dated outside its event rather than flagging it; the threat model says so.
+- The threat model also cites ADR 0043 for the rule that organizer members need two-factor authentication to act for an organizer.
+- DCO and OpenSSF Scorecard workflows run in every repository with code. brand-assets has no workflows, so the threat model scopes both to repositories with code.
+- SECURITY.md is the organization-wide default and shows in other repositories, so its links to `docs/security/` use full https://github.com/openpickleball/.github/... URLs. README.md and the new pages use relative links.
 
 ## Risks
 

@@ -40,6 +40,7 @@ The issue forms and pull request template in [`.github`](.github) are shared the
 - [`.github/workflows`](.github/workflows): this repository's own checks (DCO sign-off, OpenSSF Scorecard, and the script tests), a monthly reminder issue for the membership review in [GOVERNANCE.md](GOVERNANCE.md), and the reusable `pull-request.yml` workflow every OPEN repository calls to check commit messages and pull request descriptions (its header shows how to call it).
 - [`actions/pull-request-check`](actions/pull-request-check): the step that workflow runs.
 - [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml): the `commit-message` hook, which runs the same commit message rules locally.
+- [`docs/security`](docs/security): the [incident response plan](docs/security/incident-response.md), which says what OPEN does when something goes wrong with security, and the [threat model](docs/security/threat-model.md), which lists what OPEN protects, the threats it expects, and the controls and gaps today.
 - [`labels.toml`](labels.toml): the labels every OPEN repository shares. The contributing guide explains how to change them.
 - [`scripts`](scripts): `membership-review.sh`, which an organization owner runs locally for that review (it only reports and never changes membership); `check_pull_request.py`, the commit message and description rules; and `sync_labels.py`, which an organization owner runs locally to bring every repository's labels in line with `labels.toml` (it only prints a plan unless given `--apply`). The two Python scripts have their tests next to them.
 
