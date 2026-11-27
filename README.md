@@ -36,9 +36,11 @@ The issue forms and pull request template in [`.github`](.github) are shared the
 ## What else is here
 
 - [`FUNDING.yml`](FUNDING.yml): the sponsor links GitHub shows on OPEN's repositories, pointing to [Open Collective](https://opencollective.com/open-pickleball), where every dollar in and out is published.
-- [`.github/workflows`](.github/workflows): this repository's own checks (DCO sign-off and OpenSSF Scorecard) and a monthly reminder issue for the membership review in [GOVERNANCE.md](GOVERNANCE.md).
-- [`scripts`](scripts): `membership-review.sh`, which an organization owner runs locally for that review. It only reports and never changes membership.
+- [`.github/workflows`](.github/workflows): this repository's own checks (DCO sign-off, OpenSSF Scorecard, and the script tests), a monthly reminder issue for the membership review in [GOVERNANCE.md](GOVERNANCE.md), and the reusable `pull-request.yml` workflow every OPEN repository calls to check commit messages and pull request descriptions (its header shows how to call it).
+- [`actions/pull-request-check`](actions/pull-request-check): the step that workflow runs.
+- [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml): the `commit-message` hook, which runs the same commit message rules locally.
+- [`scripts`](scripts): `membership-review.sh`, which an organization owner runs locally for that review (it only reports and never changes membership), and `check_pull_request.py`, the commit message and description rules, with its tests.
 
 ## License
 
-The documentation here is licensed under CC BY 4.0 ([`LICENSE`](LICENSE)), and the code in `scripts` under Apache-2.0 ([`LICENSE-APACHE`](LICENSE-APACHE)). The Code of Conduct is adapted from the Contributor Covenant and licensed under CC BY-SA 4.0. See [LICENSING.md](LICENSING.md) for details.
+The documentation here is licensed under CC BY 4.0 ([`LICENSE`](LICENSE)), and the code in `scripts`, `actions`, and the workflows under Apache-2.0 ([`LICENSE-APACHE`](LICENSE-APACHE)). The Code of Conduct is adapted from the Contributor Covenant and licensed under CC BY-SA 4.0. See [LICENSING.md](LICENSING.md) for details.

@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: Apache-2.0
+# Checks a pull request's commit messages and description
+# (scripts/check_pull_request.py, CONTRIBUTING.md "Commit messages").
+#
+# Every OPEN repository calls this from its own workflow, pinned to a
+# release commit:
+#
+#   on:
+#     pull_request:
+#       types: [opened, edited, synchronize, reopened]
+#   permissions:
+#     contents: read
+#     pull-requests: read
+#   jobs:
+#     pull-request:
+#       uses: openpickleball/.github/.github/workflows/pull-request.yml@<sha> # v1.0.0
+#
+# `edited` reruns it when the title or description changes. The status
+# check is named "pull-request / check".
+name: Pull request
+
+on:
+  workflow_call:
+  # This repository's own pull requests.
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # `$/` is this workflow's own repository at the commit that is
+      # running, so a caller pinned to a release gets that release's script.
+      - uses: $/actions/pull-request-check

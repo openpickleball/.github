@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: Apache-2.0
+# Runs scripts/check_pull_request.py on the current pull request. The
+# reusable workflow .github/workflows/pull-request.yml calls this; call
+# that workflow rather than this action, so every repository runs the
+# same job.
+name: Pull request check
+description: Check a pull request's commit messages and description against the OPEN contributing guide.
+
+runs:
+  using: composite
+  steps:
+    - name: Check the commit messages and the description
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        REPO: ${{ github.repository }}
+        PR: ${{ github.event.pull_request.number }}
+        PR_TITLE: ${{ github.event.pull_request.title }}
+        PR_BODY: ${{ github.event.pull_request.body }}
+        PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+      run: |
+        gh api --paginate "repos/$REPO/pulls/$PR/commits" > "$RUNNER_TEMP/commits.json"
+        python3 -I "$GITHUB_ACTION_PATH/../../scripts/check_pull_request.py" pr "$RUNNER_TEMP/commits.json"

@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: Apache-2.0
+# Hooks other OPEN repositories use from their .pre-commit-config.yaml:
+#
+#   default_install_hook_types: [pre-commit, commit-msg]
+#   default_stages: [pre-commit]
+#   repos:
+#     - repo: https://github.com/openpickleball/.github
+#       rev: v1.0.0
+#       hooks:
+#         - id: commit-message
+- id: commit-message
+  name: commit message
+  description: Check a commit message against the OPEN contributing guide, sign-off included.
+  entry: scripts/check_pull_request.py commit-msg
+  language: script
+  stages: [commit-msg]
