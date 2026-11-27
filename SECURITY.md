@@ -41,11 +41,11 @@ When we assess a report, we set its severity. We aim to fix it within:
 
 Each target counts from the day we receive the report.
 
-We announce a fix for a vulnerability in OPEN code in a GitHub security advisory on the affected repository. A problem outside the code, such as with hosting, DNS, or email, is announced in the public incident summary instead. Either way, we credit you unless you'd prefer to stay anonymous.
+Once a problem is fixed, we announce it: a vulnerability in OPEN code in a GitHub security advisory on the affected repository, and any other problem in a public summary. Either way, we credit you unless you'd prefer to stay anonymous.
 
 ## Disclosure
 
-We follow coordinated disclosure. Please keep the details private until 90 days after your report. If a fix ships sooner, we'll agree with you on when to share them. If a fix needs more time, we can agree together on a later date.
+We follow coordinated disclosure. Please keep the details private until 90 days after your report. We'll agree the announcement date with you: no later than the end of that window, and sooner if we both agree once a fix ships. If a fix needs more time, we can agree together on a later date.
 
 ## How we handle incidents
 

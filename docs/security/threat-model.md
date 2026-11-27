@@ -36,7 +36,7 @@ Credential stuffing, phishing, session theft, and takeover of a maintainer's or 
 - Two-factor authentication with TOTP and recovery codes ([ADR 0043](https://github.com/openpickleball/backend/blob/main/docs/adr/0043-mfa-totp-and-recovery-codes.md)), and passkeys, which resist phishing ([ADR 0056](https://github.com/openpickleball/backend/blob/main/docs/adr/0056-passkeys.md)). Staff, superusers, moderators, and owners of a partner application with production access must use it.
 - Login rate limits, a check that refuses passwords found in known breaches, session time limits, and an email for each sign-in from a new device ([ADR 0047](https://github.com/openpickleball/backend/blob/main/docs/adr/0047-account-security-limits-and-sessions.md)).
 - Security headers, and session cookies that the browser keeps to one host ([ADR 0040](https://github.com/openpickleball/backend/blob/main/docs/adr/0040-security-headers-and-cookies.md)).
-- Every account that controls an OPEN asset uses two-factor authentication, and each asset should be recoverable by two people ([Account recovery](../../GOVERNANCE.md#account-recovery)).
+- GOVERNANCE.md requires two-factor authentication on every account that controls an OPEN asset, and that each asset be recoverable by two people ([Account recovery](../../GOVERNANCE.md#account-recovery)).
 
 ### Data leaks
 
