@@ -35,6 +35,7 @@ The issue forms and pull request template in [`.github`](.github) are shared the
 
 ## What else is here
 
+- [`CONTRIBUTORS.md`](CONTRIBUTORS.md): everyone who has helped build OPEN, in any repository, with code or without.
 - [`FUNDING.yml`](FUNDING.yml): the sponsor links GitHub shows on OPEN's repositories, pointing to [Open Collective](https://opencollective.com/open-pickleball), where every dollar in and out is published.
 - [`.github/workflows`](.github/workflows): this repository's own checks (DCO sign-off, OpenSSF Scorecard, and the script tests), a monthly reminder issue for the membership review in [GOVERNANCE.md](GOVERNANCE.md), and the reusable `pull-request.yml` workflow every OPEN repository calls to check commit messages and pull request descriptions (its header shows how to call it).
 - [`actions/pull-request-check`](actions/pull-request-check): the step that workflow runs.
