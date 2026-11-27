@@ -80,6 +80,32 @@ Signed-off-by: Your Name <you@example.com>
 
 We can't accept commits without a sign-off.
 
+## AI-assisted contributions
+
+You may use AI tools, such as coding assistants and chat models, to help with your contribution.
+
+You are responsible for the whole change, including any part an AI tool wrote. Understand it well enough to explain it and to answer review questions about it. AI-assisted changes meet the same review and test bar as any other change.
+
+Your sign-off applies in full. When you sign off AI-assisted work, you certify that you have the right to submit all of it under the repository's license, as described in [Sign off your commits](#sign-off-your-commits).
+
+Say so when an AI tool wrote a meaningful part of your change. You don't need to mention autocomplete or spelling fixes. Use either of these:
+
+- A `Co-Authored-By:` trailer on the commit, for example `Co-Authored-By: Claude <noreply@anthropic.com>`.
+- A note in the pull request description that says which tool you used and what it wrote.
+
+This rule is the same in every OPEN repository.
+
+Don't put links to private AI sessions in commit messages or pull request descriptions. Outside readers can't open them, so they don't help reviewers or anyone reading the history later. Put what a reviewer needs to know in the message or description itself. Commits that are already merged and contain such links can stay as they are.
+
+Some repositories have files written for AI coding tools:
+
+- **`CLAUDE.md` and `AGENTS.md`** give instructions to AI coding tools, and they also record the repository's conventions. Read them to learn those conventions. If you use an AI tool, follow them. If your change makes one of them wrong, update it in the same pull request. You don't need an AI tool to contribute.
+- **`plans/`** (or the repository's plans directory) holds plans written before larger changes. Reading them is optional. A plan shows how someone intended to do the work. It isn't a spec or a promise.
+
+A repository's own README or `CONTRIBUTING.md` can say more about these files.
+
+If a pull request looks like low-effort AI output that its author hasn't reviewed, maintainers may close it with a link to this section. They don't need to review it line by line first.
+
 ## Becoming a maintainer
 
 You don't need to join the GitHub organization to contribute, and there is no application. After your first merged pull request, a maintainer invites you to the organization's `contributors` team. Sustained contribution can earn a role team with write access, and later a maintainer role. Existing maintainers nominate people for both in public. Members with no activity for 90 days are removed, and can return the same way. See [contributor roles](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#contributor-roles).
