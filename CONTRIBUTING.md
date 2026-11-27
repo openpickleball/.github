@@ -28,10 +28,35 @@ Anyone can propose or challenge a change to the rating spec by opening an issue.
 
 ## Pull requests
 
-1. Link the issue the pull request addresses.
+1. Link the issue the pull request addresses with `Closes #N` in the description, or `Refs #N` or `Part of #N` when the issue stays open. The pull request template starts the description for you.
 2. Keep each pull request to one change.
 3. Add or update tests and documentation when behavior changes.
 4. Sign off every commit, as described below.
+5. Write each commit message as described in "Commit messages" below. Leave a type prefix such as `fix:` off the pull request title too.
+
+## Commit messages
+
+Write each commit message like this:
+
+```
+Import email tasks before checking their registration
+
+autodiscover_tasks() loads task modules lazily outside a worker, so the
+routing test failed when it ran alone.
+
+Closes #328
+
+Signed-off-by: Your Name <you@example.com>
+```
+
+- The subject is imperative ("Add", "Fix", "Refuse"), starts with a capital letter, has no period at the end, and is at most 72 characters.
+- No type prefix such as `test:` or `fix(api):`.
+- A blank line, then a body that says why the change is needed.
+- No `fixup!` or `squash!` commits left in a pull request: squash them with `git rebase -i --autosquash`.
+
+The `pull-request` check runs these rules on every pull request, and again when you edit its title or description. It also flags a description or message damaged by shell escaping: in a double-quoted PowerShell string a backtick is an escape character, so pass text from a file instead (`gh pr create --body-file`, `git commit -F`). To reword a commit that is already pushed, use `git rebase -i`, then `git push --force-with-lease`.
+
+Repositories that use pre-commit also install a `commit-msg` hook that checks these rules and the sign-off before you push. Run `pre-commit install` (or the repository's own install command) to get it.
 
 ## Keep player data out
 
