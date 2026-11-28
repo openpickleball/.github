@@ -136,6 +136,24 @@ A repository's own README or `CONTRIBUTING.md` can say more about these files.
 
 If a pull request looks like low-effort AI output that its author hasn't reviewed, maintainers may close it with a link to this section. They don't need to review it line by line first.
 
+## Releases and versioning
+
+Each repository says how it is versioned in its own README or `CONTRIBUTING.md`. The rules below are the same everywhere.
+
+| Repository | Version scheme | Release notes |
+| --- | --- | --- |
+| `engine` | [Semantic Versioning](https://semver.org/), with the stability promise in its README | `CHANGELOG.md`, a GitHub release, and the package on PyPI |
+| `.github` (the shared `commit-message` hook and the reusable `pull-request` workflow) | Semantic Versioning (see below) | `CHANGELOG.md` and a GitHub release |
+| `rating-spec` | The spec's own Semantic Versioning, in its README | `CHANGELOG.md`, with the RFC that approved each version |
+| `backend` and `frontend` | Calendar versions, `YYYY.MM.N` (for example `2026.12.0` for the first release in December 2026) | GitHub releases with generated notes |
+| `developers`, `evaluation`, and `brand-assets` | Not versioned. `main` is the current version. | None |
+
+- **Tags.** A release is a tag named `v` plus the version, such as `v1.2.0` or `v2026.12.0`. A tag never moves and is never deleted. Fixing a release means cutting a new one.
+- **Who cuts a release.** A maintainer of that repository. During the founding phase, an owner can too.
+- **First release of `backend` and `frontend`.** Each service cuts its first release when it first deploys to production, and then one for every production deploy.
+- **The shared checks in `.github`.** A major version is any change that can make a commit or pull request fail when it passed before, such as a new or stricter rule. A minor version adds something without failing anything that passed. A patch fixes a bug or improves a message. Every release gets a `CHANGELOG.md` entry and a GitHub release.
+- **Pinning the shared checks.** Other repositories pin the hook and the workflow to the release's commit SHA with the version in a comment (`@<sha> # v1.0.0`). Dependabot keeps the pins current: the `github-actions` ecosystem for the workflow, and the `pre-commit` ecosystem for the hook.
+
 ## Becoming a maintainer
 
 You don't need to join the GitHub organization to contribute, and there is no application. After your first merged pull request, a maintainer invites you to the organization's `contributors` team. Sustained contribution can earn a role team with write access, and later a maintainer role. Existing maintainers nominate people for both in public. Members with no activity for 90 days are removed, and can return the same way. See [contributor roles](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#contributor-roles).
