@@ -40,7 +40,7 @@ jobs:
 
           **Membership (every month)**
           - [ ] An owner runs `bash scripts/membership-review.sh` from a checkout of this repository.
-          - [ ] Members other than owners with no activity for 90 days are removed, each with a short, friendly note that they can return after their next merged pull request.
+          - [ ] Members other than owners with no activity for 90 days are removed, each with a short, friendly note that they can return after their next merged pull request and stay on the contributor list.
           - [ ] Contributors with a first merged pull request are invited to the `contributors` team.
 
           **Response times and contributors (every month)**
