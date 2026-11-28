@@ -109,7 +109,7 @@ A contributor role gives no claim to a seat on the board. Board seats are filled
 
 ## Funds
 
-[Open Source Collective](https://www.oscollective.org) (OSC), a nonprofit fiscal host, holds OPEN's funds. They are never kept in a personal account. Every dollar in and out is published on [OPEN's Open Collective page](https://opencollective.com/open-pickleball).
+OPEN has applied to [Open Source Collective](https://www.oscollective.org) (OSC), a nonprofit fiscal host, to hold its funds. Until OSC approves, OPEN holds no funds and accepts none. Funds are never kept in a personal account. Every dollar in and out is published on [OPEN's Open Collective page](https://opencollective.com/open-pickleball).
 
 OSC is a 501(c)(6) organization, so donations through it are not tax-deductible in the United States.
 
@@ -194,7 +194,7 @@ Nobody shares their personal recovery codes. Recovery codes are stored offline, 
 | DNS for openpb.org | Primary owner | Pending |
 | Hosting | Primary owner | Pending |
 | Email for openpb.org | Primary owner | Pending |
-| Open Collective | Steward | Second [collective admin](#collective-admins) (pending, issue #7) |
+| Open Collective | Steward | Second [collective admin](#collective-admins) |
 
 Pending means no second person can recover that asset yet.
 

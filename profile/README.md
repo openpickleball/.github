@@ -68,7 +68,7 @@ Players never pay. Our money rules are simple:
 4. Every dollar in and out is published.
 5. No advertisements.
 
-Open Source Collective, our fiscal host, holds our funds, and every transaction is public on [our Open Collective page](https://opencollective.com/open-pickleball). The [expense policy](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#funds) says what the money can pay for and how each expense is approved.
+We've applied to Open Source Collective, a nonprofit fiscal host, to hold our funds. Until it approves, we hold no funds and accept none. Once it does, every transaction will be public on [our Open Collective page](https://opencollective.com/open-pickleball). The [expense policy](https://github.com/openpickleball/.github/blob/main/GOVERNANCE.md#funds) says what the money can pay for and how each expense is approved.
 
 ## Repositories
 
