@@ -103,7 +103,9 @@ During the founding phase, the steward may directly appoint the first maintainer
 
 ### Inactive members
 
-Organization members with no activity in any OPEN repository for 90 days are removed from the organization. Activity means commits, pull requests, issues, reviews, or comments. Removal is routine housekeeping, not a judgment, and anyone removed this way can return through the same path after their next merged pull request. This rule is separate from the six-month emeritus rule for maintainers. Owners are exempt, because the backup owner is often inactive by design.
+You can always come back. If you step away and are removed from the organization, your next merged pull request brings you back through the same path as the first time, with no application. Removal never takes anyone off the [contributor list](https://github.com/openpickleball/.github/blob/main/CONTRIBUTORS.md): credit for past work is permanent.
+
+Organization members with no activity in any OPEN repository for 90 days are removed from the organization. Activity means commits, pull requests, issues, reviews, or comments. Removal is routine housekeeping, not a judgment, and helping a few times a year is welcome. This rule is separate from the six-month emeritus rule for maintainers. Owners are exempt, because the backup owner is often inactive by design.
 
 A contributor role gives no claim to a seat on the board. Board seats are filled as described above.
 
