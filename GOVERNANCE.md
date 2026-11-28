@@ -131,7 +131,7 @@ Records this section requires are public. For a security problem that isn't publ
 
 The backup owner holds owner access so that OPEN never depends on one account. During the founding phase, the steward appoints the backup owner. Once the board is seated, the board does. Each appointment, and every change to it, is recorded in a public issue.
 
-Reviewing changes to the charter and governance files is part of the role. It needs no trigger and no public issue.
+Reviewing changes to the files under code owner review (see [Reviewing the charter and governance files](#reviewing-the-charter-and-governance-files)) is part of the role. It needs no trigger and no public issue.
 
 Beyond that review, the backup owner may act as an owner only when:
 
@@ -149,7 +149,12 @@ When they act, the backup owner:
 
 ### Reviewing the charter and governance files
 
-A change to `CHARTER.md`, `GOVERNANCE.md`, or `.github/CODEOWNERS` needs an approving review from a code owner who didn't write or push any part of the change. The code owners are listed in `.github/CODEOWNERS`.
+A change to any file listed in `.github/CODEOWNERS` needs an approving review from a code owner who didn't write or push any part of the change. That file is the list of covered paths and their code owners. It covers:
+
+- The charter and governance files: `CHARTER.md`, `GOVERNANCE.md`, and `.github/CODEOWNERS`.
+- The files that decide where money and security reports go: `FUNDING.yml` and `SECURITY.md`.
+- The checks other OPEN repositories rely on: `.github/workflows/`, `actions/`, `scripts/`, and `.pre-commit-hooks.yaml`.
+- The organization profile: `profile/`.
 
 GitHub can't fully enforce this. Anyone with admin access to the repository, which includes every owner, can skip the review or change the rule itself. They may skip the review only from inside a pull request, only to fix a security problem or restore access, and they must explain why in that pull request. Every change to the repository's rules is recorded in a public issue.
 
@@ -157,7 +162,7 @@ GitHub can't fully enforce this. Anyone with admin access to the repository, whi
 
 Once a repository has at least two maintainers (the primary owner counts as one if they maintain it), its default branch must require one approving review for every change. An owner sets this up within 7 days of the second maintainer's appointment and records it in that appointment issue.
 
-If a repository drops back to one maintainer, that maintainer can't approve their own changes. The requirement may then be lifted until there are two maintainers again. Lifting it is recorded in a public issue, and never lifts the review of the charter and governance files.
+If a repository drops back to one maintainer, that maintainer can't approve their own changes. The requirement may then be lifted until there are two maintainers again. Lifting it is recorded in a public issue, and never lifts the code owner review of the files listed in `.github/CODEOWNERS`.
 
 ### Account recovery
 
