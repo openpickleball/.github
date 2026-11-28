@@ -6,10 +6,11 @@ Different parts of OPEN are licensed differently, because code, documentation, d
 | --- | --- |
 | Hosted application, backend, and reference rating engine (the `frontend`, `backend`, and `engine` repositories) | [AGPL-3.0-or-later](https://www.gnu.org/licenses/agpl-3.0.html) |
 | SDKs, client libraries, API specifications, and integration libraries | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| Documentation, including the developer site's text (the `developers` repository), and the published rating spec (the `rating-spec` repository) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Documentation, including the developer site's text (the `developers` repository), the published rating spec (the `rating-spec` repository), and the published evaluation of the reference engine, with its aggregate results, tables, and figures (the `evaluation` repository) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | The developer site's code: its build configuration, workflows, and scripts (the `developers` repository) | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | Player and match data | Not openly licensed (see below) |
 | The OPEN name and logo | Not licensed (see below) |
+| Brand files (the `brand-assets` repository) | The horizon artwork is CC BY 4.0. The fonts keep their [SIL Open Font License](https://openfontlicense.org/). Files that show the OPEN name or logo are not licensed (see below). The repository's `LICENSE.md` says which terms apply to each file. |
 
 ## Why these licenses
 

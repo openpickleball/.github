@@ -79,6 +79,7 @@ Open Source Collective, our fiscal host, holds our funds, and every transaction 
 | [backend](https://github.com/openpickleball/backend) | Backend services and APIs |
 | [frontend](https://github.com/openpickleball/frontend) | The public app |
 | [developers](https://github.com/openpickleball/developers) | The developer site at [dev.openpb.org](https://dev.openpb.org) |
+| [evaluation](https://github.com/openpickleball/evaluation) | The published evaluation of the reference engine: methodology, results, and the pre-registered test |
 | [brand-assets](https://github.com/openpickleball/brand-assets) | Logos, colors, typography, and the brand guidelines |
 | [.github](https://github.com/openpickleball/.github) | This organization profile and shared community files |
 
