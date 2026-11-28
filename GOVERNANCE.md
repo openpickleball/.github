@@ -17,6 +17,18 @@ The steward must seat the first board before any OPEN rating goes live, and no l
 
 When the board is seated, control of every project asset passes to the board or a legal entity it controls. That includes the GitHub organization, domain names, the OPEN name and logo, hosted services, accounts, and funds.
 
+### Changing this document before the board is seated
+
+Until the board is seated, a change to this document needs all of the following:
+
+1. A public pull request.
+2. Approval from a code owner who didn't write or push any part of it (see [Reviewing the charter and governance files](#reviewing-the-charter-and-governance-files)).
+3. At least 14 days between opening the pull request and merging it, so anyone can comment.
+
+A change that only corrects an error, fixes a link, or rewords text without changing what any rule means can merge without the 14 days. Its pull request says so.
+
+Some changes can't be made this way and wait for the board: a change that removes or loosens any of the steward's limits above, reduces the board's powers, moves the December 31, 2027 deadline later, or loosens this section or the code owner review.
+
 ## Governing board
 
 ### Responsibilities
@@ -61,8 +73,8 @@ A majority of seated members is a quorum, and decisions pass by a majority of th
 | Disagreements within a repository | Repository maintainers, then the board | Discussion first, then a maintainer majority. The board decides if that fails. |
 | Changes to the official rating spec | Governing board | The [RFC process](https://github.com/openpickleball/rating-spec/blob/main/rfcs/README.md) in the `rating-spec` repository |
 | Which tools can show an OPEN rating | Governing board | Published conformance requirements |
-| Changes to this document | Governing board | Public pull request and majority vote |
-| Changes to the charter | Governing board | See below |
+| Changes to this document | Governing board | Public pull request and majority vote. Before the board is seated, see [Changing this document before the board is seated](#changing-this-document-before-the-board-is-seated). |
+| Changes to the charter | Governing board | See [Amending the charter](#amending-the-charter). Before the board is seated, the steward can only correct errors or clarify wording, through a public pull request with code owner approval (see [Current status](#current-status-founding-phase)). |
 
 ## Amending the charter
 
