@@ -50,7 +50,7 @@ An API that returns more than it should, an exposed backup or export, or persona
 
 A compromised dependency, GitHub Action, or workflow.
 
-- Changes to the charter, GOVERNANCE.md, and CODEOWNERS need a code owner's review ([Reviewing the charter and governance files](../../GOVERNANCE.md#reviewing-the-charter-and-governance-files)).
+- Changes to the charter, GOVERNANCE.md, CODEOWNERS, FUNDING.yml, SECURITY.md, the organization profile, and this repository's workflows, actions, and scripts need a code owner's review ([Reviewing the charter and governance files](../../GOVERNANCE.md#reviewing-the-charter-and-governance-files)).
 - In every repository with code, pull requests check each commit for a DCO sign-off, and OpenSSF Scorecard reviews the repository's security practices.
 - GitHub secret scanning for known provider patterns is on for every repository.
 - This repository's workflows pin each GitHub Action to a commit SHA.

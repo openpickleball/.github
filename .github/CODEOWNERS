@@ -1,8 +1,17 @@
-# Changes to the project's founding documents, and to this file, need an
-# approving review from a code owner who didn't write or push any part of the
-# change. The primary owner and the backup owner review each other's changes
-# (see GOVERNANCE.md, "Administrative access"). Replace them with a board or
-# maintainers team once one exists.
+# Changes to the project's founding documents, to the files that route money
+# and security reports, to the checks other repositories run, to the
+# organization profile, and to this file, need an approving review from a
+# code owner who didn't write or push any part of the change. The primary
+# owner and the backup owner review each other's changes (see GOVERNANCE.md,
+# "Administrative access"). Replace them with a board or maintainers team once
+# one exists.
 /CHARTER.md @GeoBradDev @ccirrincione
 /GOVERNANCE.md @GeoBradDev @ccirrincione
 /.github/CODEOWNERS @GeoBradDev @ccirrincione
+/FUNDING.yml @GeoBradDev @ccirrincione
+/SECURITY.md @GeoBradDev @ccirrincione
+/.github/workflows/ @GeoBradDev @ccirrincione
+/actions/ @GeoBradDev @ccirrincione
+/scripts/ @GeoBradDev @ccirrincione
+/.pre-commit-hooks.yaml @GeoBradDev @ccirrincione
+/profile/ @GeoBradDev @ccirrincione
