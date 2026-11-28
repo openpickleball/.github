@@ -21,7 +21,7 @@ Fix targets count from the day the report arrives, the same day the disclosure w
 
 ## Keep it private
 
-Keep the details out of public issues, pull requests, discussions, and chat until the fix ships. Commit messages never carry them, at any point: merging makes them public, and they can't be changed afterwards. Before the fix ships, the only public records are the ones [GOVERNANCE.md](../../GOVERNANCE.md) requires, such as a backup owner's record of acting, and an interim notice under [Publishing](#publishing).
+Keep the details out of public issues, pull requests, discussions, and chat until the announcement. Commit messages never carry them, at any point: merging makes them public, and they can't be changed afterwards. Before the announcement, the only public records are the ones [GOVERNANCE.md](../../GOVERNANCE.md) requires, such as a backup owner's record of acting, and an interim notice under [Publishing](#publishing).
 
 ## First steps for every incident
 
@@ -70,11 +70,11 @@ Each notice says what happened, what data was involved, what OPEN has done, and 
 
 ## Publishing
 
-Once the fix ships, announce every confirmed problem once: a code vulnerability by its advisory, and every other problem by a public summary. Agree the date with the reporter, as the [security policy](../../SECURITY.md#disclosure) says: no later than the end of the disclosure window, and sooner if you both agree. When OPEN found the problem itself, the incident lead sets the date, as soon as is practical after the fix ships. Credit the reporter unless they asked to stay anonymous.
+Once the fix ships, announce every confirmed problem once: a code vulnerability by its advisory, and every other problem by a public summary. Agree the date with the reporter, as the [security policy](../../SECURITY.md#disclosure) says: no later than the end of the disclosure window, and sooner if you both agree. When OPEN found the problem itself, the incident lead sets the date, as soon as is practical after the fix ships. When the window has passed without an agreed later date, the incident lead sets it the same way and tells the reporter. Credit the reporter unless they asked to stay anonymous.
 
 If the fix won't be ready by the end of the window, ask the reporter for a later date, and keep working toward the fix either way.
 
-The announcement leaves out details that identify anyone involved, as [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes) requires for security issues. The one exception is this plan's own: a reporter who chose to be credited is named, as the security policy promises. A record that [Administrative access](../../GOVERNANCE.md#administrative-access) requires stays a summary until the fix ships and the announcement is out, and then gives the full explanation, as that section says.
+The announcement leaves out details that identify anyone involved, except a reporter who chose to be credited. This follows [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes), which keeps identifying details out of what the board publishes about security issues. A record that [Administrative access](../../GOVERNANCE.md#administrative-access) requires gives only a summary until the fix ships and the full explanation after, as that section says. GOVERNANCE.md sets no deadline for the full explanation, so this plan adds it once the announcement is out, which keeps the date agreed with the reporter.
 
 An interim notice before the fix ships is not the announcement. It happens only when the incident is already public, or when the disclosure window ends before the fix and the reporter won't extend it. The incident lead decides the wording. It says what is affected and what to do, never how the problem works or that it can still be used. The announcement still comes once the fix ships.
 
@@ -94,6 +94,6 @@ Aim to write down what happened, what went well, and what to change within 30 da
 - [ ] Operational: fix the configuration or access, and confirm the leak is closed
 - [ ] Interim notice, only if the incident is already public or the window ends before the fix and the reporter won't extend it
 - [ ] Rotate again before the announcement if the cause could have exposed the new secrets
-- [ ] Code: publish the advisory, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when there is none
-- [ ] Operational: publish the public summary, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when there is none
+- [ ] Code: publish the advisory, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when no date was agreed
+- [ ] Operational: publish the public summary, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when no date was agreed
 - [ ] Hold the review and update this plan and the threat model
