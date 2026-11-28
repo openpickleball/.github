@@ -94,6 +94,6 @@ Aim to write down what happened, what went well, and what to change within 30 da
 - [ ] Operational: fix the configuration or access, and confirm the leak is closed
 - [ ] Interim notice, only if the incident is already public or the window ends before the fix and the reporter won't extend it
 - [ ] Rotate again before the announcement if the cause could have exposed the new secrets
-- [ ] Code: publish the advisory, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when no date was agreed
-- [ ] Operational: publish the public summary, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when no date was agreed
+- [ ] Code: publish the advisory, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when there is no reporter or the window passed without an agreed date
+- [ ] Operational: publish the public summary, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when there is no reporter or the window passed without an agreed date
 - [ ] Hold the review and update this plan and the threat model
