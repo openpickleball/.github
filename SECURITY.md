@@ -28,9 +28,29 @@ Problems with the rating math that don't involve bypassing a control are welcome
 
 ## What to expect
 
-We aim to acknowledge reports within 5 business days. We'll keep you updated while we investigate and fix the problem, and we'll credit you when it's disclosed unless you'd prefer to stay anonymous.
+We aim to acknowledge reports within 5 business days. We'll keep you updated while we investigate and fix the problem.
 
-Please give us a reasonable chance to fix the problem before sharing details publicly.
+When we assess a report, we set its severity. We aim to fix it within:
+
+| Severity | Fix target |
+| --- | --- |
+| [Critical](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md#severity) | 7 days |
+| [High](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md#severity) | 30 days |
+| [Medium](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md#severity) | 90 days |
+| [Low](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md#severity) | Best effort |
+
+Each target counts from the day we receive the report.
+
+Once a problem is fixed, we announce it: a vulnerability in OPEN code in a GitHub security advisory on the affected repository, and any other problem in a public summary. Either way, we credit you unless you'd prefer to stay anonymous.
+
+## Disclosure
+
+We follow coordinated disclosure. Please keep the details private until 90 days after your report. We'll agree the announcement date with you: no later than the end of that window, and sooner if we both agree once a fix ships. If a fix needs more time, we can agree together on a later date. If you won't agree to one, we publish a short notice of what is affected and what to do, without details of how the problem works.
+
+## How we handle incidents
+
+- The [incident response plan](https://github.com/openpickleball/.github/blob/main/docs/security/incident-response.md) says who leads, how we rate severity, and the steps we follow, including how we tell affected players and partners.
+- The [threat model](https://github.com/openpickleball/.github/blob/main/docs/security/threat-model.md) lists what OPEN protects, the threats we expect, the controls in place today, and the known gaps.
 
 ## Supported versions
 
