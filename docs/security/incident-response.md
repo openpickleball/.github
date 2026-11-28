@@ -21,7 +21,7 @@ Fix targets count from the day the report arrives, the same day the disclosure w
 
 ## Keep it private
 
-Keep the details out of public issues, pull requests, discussions, and chat until the fix ships. Commit messages never carry them, at any point: merging makes them public, and they can't be changed afterwards. Before the fix ships, the only public records are the ones [GOVERNANCE.md](../../GOVERNANCE.md) requires, such as a backup owner's record of acting, and an early summary under [Publishing](#publishing).
+Keep the details out of public issues, pull requests, discussions, and chat until the fix ships. Commit messages never carry them, at any point: merging makes them public, and they can't be changed afterwards. Before the fix ships, the only public records are the ones [GOVERNANCE.md](../../GOVERNANCE.md) requires, such as a backup owner's record of acting, and an interim notice under [Publishing](#publishing).
 
 ## First steps for every incident
 
@@ -29,7 +29,7 @@ Keep the details out of public issues, pull requests, discussions, and chat unti
 2. **Open a private security advisory** on the affected repository, or on the [.github](https://github.com/openpickleball/.github) repository when no repository is affected (hosting, DNS, email, or an account). Keep notes there.
 3. **Assess.** Reproduce the problem, work out what it affects, and set a severity from the table above. Tell the reporter the severity and the fix target.
 4. **Contain.** Stop the harm before fixing the cause. That can mean turning off a feature, revoking an account's access or a partner application, voiding affected matches, or taking a service offline for a while.
-5. **Rotate secrets.** Replace every secret that may have been exposed, not just the ones known to be. If the cause could expose the new secrets too, rotate again after the fix and before anything is published. The kinds of secret OPEN holds are:
+5. **Rotate secrets.** Replace every secret that may have been exposed, not just the ones known to be. If the cause could expose the new secrets too, rotate again after the fix and before the announcement. The kinds of secret OPEN holds are:
    - The Django secret key. If the old key was exposed, don't keep it in `SECRET_KEY_FALLBACKS`. Passkeys made before the rotation then stop working for passkey login until the player removes and adds them again ([ADR 0056](https://github.com/openpickleball/backend/blob/main/docs/adr/0056-passkeys.md)), and every device looks new, so each account's next sign-in sends an alert ([ADR 0047](https://github.com/openpickleball/backend/blob/main/docs/adr/0047-account-security-limits-and-sessions.md)).
    - The field encryption keys. Follow the rotation steps in the [backend README](https://github.com/openpickleball/backend/blob/main/README.md#settings); don't remove an old key until the re-encryption has finished.
    - The admin's private path (`ADMIN_URL`), which the [backend README](https://github.com/openpickleball/backend/blob/main/README.md#app-platform) treats as a secret
@@ -48,13 +48,13 @@ Then follow the track that fits.
 2. Run the tests locally, since GitHub Actions don't run in the private fork, and have the fix reviewed.
 3. Merge it. If required status checks block the merge, an owner bypasses them for this fix only and records why in the advisory.
 4. Deploy it right away.
-5. Rotate again if needed (see step 5 above), then publish the advisory on the date set under [Publishing](#publishing).
+5. Rotate again if needed (see [First steps](#first-steps-for-every-incident), step 5), then publish the advisory on the date set under [Publishing](#publishing).
 
 ## Operational incident
 
 For hosting, DNS, email, accounts, or a leaked credential:
 
-1. Fix the configuration or access, and confirm the path that leaked is closed. Rotate again if needed (see step 5 above).
+1. Fix the configuration or access, and confirm the path that leaked is closed. Rotate again if needed (see [First steps](#first-steps-for-every-incident), step 5).
 2. Announce it in a public summary on the date set under [Publishing](#publishing). The incident's advisory stays private as the working notes and is never published, whichever repository it is on.
 
 ## Telling people
@@ -72,15 +72,15 @@ Each notice says what happened, what data was involved, what OPEN has done, and 
 
 Once the fix ships, announce every confirmed problem once: a code vulnerability by its advisory, and every other problem by a public summary. Agree the date with the reporter, as the [security policy](../../SECURITY.md#disclosure) says: no later than the end of the disclosure window, and sooner if you both agree. When OPEN found the problem itself, the incident lead sets the date, as soon as is practical after the fix ships. Credit the reporter unless they asked to stay anonymous.
 
-If the fix won't be ready by the end of the window, ask the reporter for a later date. If they won't agree, publish a summary of what is affected and what to do, never how the problem works, and keep working toward the fix.
+If the fix won't be ready by the end of the window, ask the reporter for a later date, and keep working toward the fix either way.
 
-The announcement leaves out details that identify anyone involved, other than a reporter who chose to be credited, as [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes) requires for security issues. A record that [Administrative access](../../GOVERNANCE.md#administrative-access) requires stays a summary until the announcement date, which still gives the full explanation after the fix ships, as that section says.
+The announcement leaves out details that identify anyone involved, as [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes) requires for security issues. The one exception is this plan's own: a reporter who chose to be credited is named, as the security policy promises. A record that [Administrative access](../../GOVERNANCE.md#administrative-access) requires stays a summary until the fix ships and the announcement is out, and then gives the full explanation, as that section says.
 
-A summary before the fix ships is the incident lead's call, made only when the incident is already public. Like every notice, it says what is affected and what to do, never how the problem works or that it can still be used.
+An interim notice before the fix ships is not the announcement. It happens only when the incident is already public, or when the disclosure window ends before the fix and the reporter won't extend it. The incident lead decides the wording. It says what is affected and what to do, never how the problem works or that it can still be used. The announcement still comes once the fix ships.
 
 ## Review
 
-Aim to write down what happened, what went well, and what to change within 30 days of the fix shipping. Update this plan and the [threat model](threat-model.md) if they need it. Publish the review under the same rules as the summary.
+Aim to write down what happened, what went well, and what to change within 30 days of the fix shipping. Update this plan and the [threat model](threat-model.md) if they need it. Publish the review under [Publishing](#publishing).
 
 ## Checklist
 
@@ -92,7 +92,8 @@ Aim to write down what happened, what went well, and what to change within 30 da
 - [ ] Notify affected players and partners (aim for 72 hours after confirming)
 - [ ] Code: fix with a test, test locally, review, merge (owner bypass recorded if needed), and deploy
 - [ ] Operational: fix the configuration or access, and confirm the leak is closed
-- [ ] Rotate again if the cause could have exposed the new secrets
-- [ ] Code: publish the advisory, with credit, on the agreed date
-- [ ] Operational: publish the public summary, with credit, on the agreed date
+- [ ] Interim notice, only if the incident is already public or the window ends before the fix and the reporter won't extend it
+- [ ] Rotate again before the announcement if the cause could have exposed the new secrets
+- [ ] Code: publish the advisory, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when there is none
+- [ ] Operational: publish the public summary, with credit if the reporter wants it, on the date agreed with the reporter, or set by the incident lead when there is none
 - [ ] Hold the review and update this plan and the threat model

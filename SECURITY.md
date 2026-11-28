@@ -45,7 +45,7 @@ Once a problem is fixed, we announce it: a vulnerability in OPEN code in a GitHu
 
 ## Disclosure
 
-We follow coordinated disclosure. Please keep the details private until 90 days after your report. We'll agree the announcement date with you: no later than the end of that window, and sooner if we both agree once a fix ships. If a fix needs more time, we can agree together on a later date.
+We follow coordinated disclosure. Please keep the details private until 90 days after your report. We'll agree the announcement date with you: no later than the end of that window, and sooner if we both agree once a fix ships. If a fix needs more time, we can agree together on a later date. If you won't agree to one, we publish a short notice of what is affected and what to do, without details of how the problem works.
 
 ## How we handle incidents
 
