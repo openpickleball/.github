@@ -29,7 +29,7 @@ Keep the details out of public issues, pull requests, discussions, and chat unti
 2. **Open a private security advisory** on the affected repository, or on the [.github](https://github.com/openpickleball/.github) repository when no repository is affected (hosting, DNS, email, or an account). Keep notes there.
 3. **Assess.** Reproduce the problem, work out what it affects, and set a severity from the table above. Tell the reporter the severity and the fix target.
 4. **Contain.** Stop the harm before fixing the cause. That can mean turning off a feature, revoking an account's access or a partner application, voiding affected matches, or taking a service offline for a while.
-5. **Rotate secrets.** Replace every secret that may have been exposed, not just the ones known to be. If the cause could expose the new secrets too, rotate again after the fix. The kinds of secret OPEN holds are:
+5. **Rotate secrets.** Replace every secret that may have been exposed, not just the ones known to be. If the cause could expose the new secrets too, rotate again after the fix and before anything is published. The kinds of secret OPEN holds are:
    - The Django secret key. If the old key was exposed, don't keep it in `SECRET_KEY_FALLBACKS`. Passkeys made before the rotation then stop working for passkey login until the player removes and adds them again ([ADR 0056](https://github.com/openpickleball/backend/blob/main/docs/adr/0056-passkeys.md)), and every device looks new, so each account's next sign-in sends an alert ([ADR 0047](https://github.com/openpickleball/backend/blob/main/docs/adr/0047-account-security-limits-and-sessions.md)).
    - The field encryption keys. Follow the rotation steps in the [backend README](https://github.com/openpickleball/backend/blob/main/README.md#settings); don't remove an old key until the re-encryption has finished.
    - The admin's private path (`ADMIN_URL`), which the [backend README](https://github.com/openpickleball/backend/blob/main/README.md#app-platform) treats as a secret
@@ -48,14 +48,14 @@ Then follow the track that fits.
 2. Run the tests locally, since GitHub Actions don't run in the private fork, and have the fix reviewed.
 3. Merge it. If required status checks block the merge, an owner bypasses them for this fix only and records why in the advisory.
 4. Deploy it right away.
-5. Publish the advisory (see [Publishing](#publishing)).
+5. Rotate again if needed (see step 5 above), then publish the advisory on the date set under [Publishing](#publishing).
 
 ## Operational incident
 
 For hosting, DNS, email, accounts, or a leaked credential:
 
-1. Fix the configuration or access, and confirm the path that leaked is closed.
-2. Announce it in a public summary (see [Publishing](#publishing)). The .github advisory stays private as the working notes and is never published.
+1. Fix the configuration or access, and confirm the path that leaked is closed. Rotate again if needed (see step 5 above).
+2. Announce it in a public summary on the date set under [Publishing](#publishing). The incident's advisory stays private as the working notes and is never published, whichever repository it is on.
 
 ## Telling people
 
@@ -64,15 +64,17 @@ Once an exposure is confirmed, OPEN tells the people it affects directly:
 - Players whose data or accounts are affected
 - Partners whose integrations are affected
 
-We aim to send these notices within 72 hours of confirming the exposure. If a law that applies sets a shorter deadline, we meet that one instead.
+We aim to send these notices within 72 hours of confirming the exposure. If a law that applies sets a shorter deadline, we aim to meet that one.
 
 Each notice says what happened, what data was involved, what OPEN has done, and what the reader should do, such as change a password or check their match history. It never says how the problem works, or how to use it while it is unfixed.
 
 ## Publishing
 
-Once the fix ships, publish a public summary for every confirmed problem. For a code vulnerability, the advisory is the announcement, and the summary can point to it. Agree the date with the reporter, as the [security policy](../../SECURITY.md#disclosure) says: no later than the end of the disclosure window, and sooner if you both agree. Credit the reporter unless they asked to stay anonymous.
+Once the fix ships, announce every confirmed problem once: a code vulnerability by its advisory, and every other problem by a public summary. Agree the date with the reporter, as the [security policy](../../SECURITY.md#disclosure) says: no later than the end of the disclosure window, and sooner if you both agree. When OPEN found the problem itself, the incident lead sets the date, as soon as is practical after the fix ships. Credit the reporter unless they asked to stay anonymous.
 
-The summary leaves out details that identify anyone involved, as [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes) requires for security issues. Records that [Administrative access](../../GOVERNANCE.md#administrative-access) requires follow its own rule: a summary until the fix ships, and the full explanation after.
+If the fix won't be ready by the end of the window, ask the reporter for a later date. If they won't agree, publish a summary of what is affected and what to do, never how the problem works, and keep working toward the fix.
+
+The announcement leaves out details that identify anyone involved, other than a reporter who chose to be credited, as [Meetings and votes](../../GOVERNANCE.md#meetings-and-votes) requires for security issues. A record that [Administrative access](../../GOVERNANCE.md#administrative-access) requires stays a summary until the announcement date, which still gives the full explanation after the fix ships, as that section says.
 
 A summary before the fix ships is the incident lead's call, made only when the incident is already public. Like every notice, it says what is affected and what to do, never how the problem works or that it can still be used.
 
@@ -83,13 +85,14 @@ Aim to write down what happened, what went well, and what to change within 30 da
 ## Checklist
 
 - [ ] Acknowledge the reporter (aim for 5 business days)
-- [ ] Open the private advisory (on .github if no repository is affected)
+- [ ] Open the private advisory (on .github if no repository is affected; an operational incident's advisory is never published)
 - [ ] Reproduce, set a severity, and tell the reporter the fix target
 - [ ] Contain the harm
 - [ ] Rotate every secret that may have been exposed
 - [ ] Notify affected players and partners (aim for 72 hours after confirming)
-- [ ] Code: fix with a test, test locally, review, merge (owner bypass recorded if needed), deploy, publish the advisory
-- [ ] Operational: fix the configuration or access, confirm the leak is closed, keep the advisory private
+- [ ] Code: fix with a test, test locally, review, merge (owner bypass recorded if needed), and deploy
+- [ ] Operational: fix the configuration or access, and confirm the leak is closed
 - [ ] Rotate again if the cause could have exposed the new secrets
-- [ ] Publish the public summary, with credit, on the date agreed with the reporter
+- [ ] Code: publish the advisory, with credit, on the agreed date
+- [ ] Operational: publish the public summary, with credit, on the agreed date
 - [ ] Hold the review and update this plan and the threat model
