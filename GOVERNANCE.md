@@ -17,6 +17,20 @@ The steward must seat the first board before any OPEN rating goes live, and no l
 
 When the board is seated, control of every project asset passes to the board or a legal entity it controls. That includes the GitHub organization, domain names, the OPEN name and logo, hosted services, accounts, and funds.
 
+### If the steward is gone for good
+
+The steward's absence counts as permanent when any of these happens:
+
+- The steward hasn't responded on any channel for 90 days.
+- The steward says so in writing.
+- Their family or legal representative confirms that the steward has died or is permanently unable to act. This counts at once.
+
+The backup owner then becomes acting steward and records it in a public issue that says which case applied. For the 90-day case, the issue also names the channels used to try to reach the steward, without giving contact details.
+
+The acting steward has every power and every limit this document gives the steward, and becomes the primary owner. That includes appointing a new backup owner and nominating the first board, with the same 30 days of public comment, by the same December 31, 2027 deadline. Their first duty is to appoint a new backup owner within 30 days, so OPEN has two owners again. From then on, "the steward" in this document means the acting steward.
+
+If the steward returns after a permanent absence was declared, the acting steward stays in place. The role passes back only if both agree in a public issue.
+
 ### Changing this document before the board is seated
 
 Until the board is seated, a change to this document needs all of the following:
@@ -161,6 +175,16 @@ When they act, the backup owner:
 - Records each action in a public issue that says which trigger applied. For the 30-day trigger, it also names the channels they used to try to reach the primary owner, without giving contact details.
 
 Under the 4-hour incident trigger, the backup owner leads the response as the [incident response plan](docs/security/incident-response.md) describes: containing the problem, rotating secrets and tokens, turning off affected apps or webhooks, preserving evidence, fixing the problem, and telling affected players and partners. Nothing else. Any other owner action, such as changing membership, rules, or access beyond what containment needs, still needs another trigger. Their authority under this trigger ends when the primary owner responds and takes the incident back. Their public record gives only a summary until the fix ships, as the rule for security problems at the start of this section says.
+
+Under every other trigger, the backup owner's authority ends as soon as the primary owner responds, unless the primary owner asks them to finish a task. A permanent absence is different: see [If the steward is gone for good](#if-the-steward-is-gone-for-good).
+
+### Recovery contact
+
+The recovery contact is the path back in if the primary owner and the backup owner are both out of reach. During the founding phase, the steward appoints the recovery contact. Once the board is seated, the board does. The recovery contact can't be either owner. Each appointment, and every change to it, is recorded in a public issue.
+
+The recovery contact holds no access day to day. They keep a sealed copy, offline, of a letter signed by both owners that names them as recovery contact, and the steps for asking GitHub Support and Open Source Collective to restore access. They never hold anyone's personal recovery codes (see [Account recovery](#account-recovery)). They open it only when neither owner has responded on any channel for 30 days, and they record that in a public issue that names the channels used, without giving contact details.
+
+They may then act only to appoint two new owners, who become primary owner and backup owner. The new primary owner becomes acting steward, with the steward's limits, as described in [If the steward is gone for good](#if-the-steward-is-gone-for-good). The recovery contact can't change the charter, sell or transfer the project or its assets, or declare an OPEN rating official.
 
 ### Reviewing the charter and governance files
 
