@@ -4,7 +4,7 @@ This plan says what OPEN does when something goes wrong with security: a reporte
 
 ## Who leads
 
-During the founding phase, the steward, who is also the primary owner of the GitHub organization, leads every incident (see [Current status: founding phase](../../GOVERNANCE.md#current-status-founding-phase)). The backup owner takes over only under the triggers listed in [Backup owner](../../GOVERNANCE.md#backup-owner), for example when the primary owner's account is the thing that was compromised. Once the board is seated, the board names who leads.
+During the founding phase, the steward, who is also the primary owner of the GitHub organization, leads every incident (see [Current status: founding phase](../../GOVERNANCE.md#current-status-founding-phase)). The backup owner takes over only under the triggers listed in [Backup owner](../../GOVERNANCE.md#backup-owner): for example, when the primary owner's account is the thing that was compromised, or when the primary owner can't be reached within 4 hours of a confirmed incident. Under the 4-hour trigger, the backup owner leads only this incident's response, and hands it back when the primary owner responds. Once the board is seated, the board names who leads.
 
 The person leading can ask maintainers or outside experts for help. Anyone brought in works in the private space described below and keeps the details to themselves until they are published.
 

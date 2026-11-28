@@ -61,7 +61,6 @@ A compromised dependency, GitHub Action, or workflow.
 - Secret scanning for non-provider patterns and validity checks is off. OPEN's organization is on GitHub's Free plan, and both need a paid add-on.
 - Several assets, including the domain registrar, DNS, hosting, and email, have no second person who can recover them yet ([Account recovery](../../GOVERNANCE.md#account-recovery)).
 - Security reports go to the same general inbox as other mail.
-- During the founding phase, if the steward can't be reached, the backup owner can act as an owner only after 30 days or on a written request ([Backup owner](../../GOVERNANCE.md#backup-owner)). That is longer than the Critical fix target.
 - A database trigger can't stop the audit log table's owner or a database superuser, who can turn it off ([ADR 0007](https://github.com/openpickleball/backend/blob/main/docs/adr/0007-append-only-audit-log.md)). The work to keep the app's database role from being either is still open ([backend #103](https://github.com/openpickleball/backend/issues/103)).
 - A repository with one maintainer has no required second review ([Required review in each repository](../../GOVERNANCE.md#required-review-in-each-repository)).
 
