@@ -194,7 +194,7 @@ Nobody shares their personal recovery codes. Recovery codes are stored offline, 
 | DNS for openpb.org | Primary owner | Pending |
 | Hosting | Primary owner | Pending |
 | Email for openpb.org | Primary owner | Pending |
-| Open Collective | Steward | Second [collective admin](#collective-admins) (pending, issue #7) |
+| Open Collective | Steward | Second [collective admin](#collective-admins) |
 
 Pending means no second person can recover that asset yet.
 
