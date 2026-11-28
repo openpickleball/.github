@@ -148,6 +148,7 @@ Reviewing changes to the files under code owner review (see [Reviewing the chart
 Beyond that review, the backup owner may act as an owner only when:
 
 - The primary owner can't be reached for 30 days
+- The primary owner can't be reached within 4 hours of a confirmed security incident, only to lead that incident's response (see below)
 - The primary owner's account is compromised or locked
 - The primary owner asks them to, in writing, in a public issue
 - The board asks them to, once it is seated
@@ -158,6 +159,8 @@ When they act, the backup owner:
 - Can't sell or transfer the project or its assets to anyone other than the board or an entity it controls
 - Can't declare an OPEN rating official
 - Records each action in a public issue that says which trigger applied. For the 30-day trigger, it also names the channels they used to try to reach the primary owner, without giving contact details.
+
+Under the 4-hour incident trigger, the backup owner leads the response as the [incident response plan](docs/security/incident-response.md) describes: containing the problem, rotating secrets and tokens, turning off affected apps or webhooks, preserving evidence, fixing the problem, and telling affected players and partners. Nothing else. Any other owner action, such as changing membership, rules, or access beyond what containment needs, still needs another trigger. Their authority under this trigger ends when the primary owner responds and takes the incident back. Their public record gives only a summary until the fix ships, as the rule for security problems at the start of this section says.
 
 ### Reviewing the charter and governance files
 
